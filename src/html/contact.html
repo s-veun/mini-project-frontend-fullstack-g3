@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <title>Contact Us</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {},
+        },
+      };
+    </script>
+    <style>
+      * {
+        font-family: "DM Sans", sans-serif;
+      }
+      body {
+        transition:
+          background-color 0.5s,
+          color 0.5s;
+      }
+
+      .primary-color {
+        background-color: #634c9f;
+      }
+
+      .bg-btn {
+        background-color: #3c3068;
+      }
+
+      .bg-btn:hover {
+        background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+      }
+      .countdown-timer {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Banner -->
+    <div
+      class="primary-color dark:bg-gray-800 text-white py-3 text-center relative overflow-hidden"
+    >
+      <div class="absolute text-5xl font-bold inset-0 bg-black opacity-10">
+        0/0
+      </div>
+      <div
+        class="relative z-10 flex items-center justify-center gap-8 lg:gap-40 flex-wrap px-4"
+      >
+        <span class="font-medium text-sm lg:text-base">
+          🎉 FREE delivery & 40% Discount for next 3 orders! Place your 1st
+          order in:
+        </span>
+        <div class="flex items-center gap-2">
+          <span class="text-xs lg:text-sm">Until the end of the sale:</span>
+          <div class="countdown-timer flex gap-2">
+            <div class="text-xs lg:text-base">
+              <span id="days">37</span> days
+            </div>
+            <div class="text-xs lg:text-base">
+              <span id="hours">20</span> hours
+            </div>
+            <div class="text-xs lg:text-base">
+              <span id="minutes">54</span> minutes
+            </div>
+            <div class="text-xs lg:text-base">
+              <span id="seconds">34</span> sec
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header -->
+    <header class="primary-color dark:bg-gray-800 sticky top-0 z-50 shadow-lg">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between gap-4 flex-wrap">
+          <!-- Logo -->
+          <div class="flex items-center gap-2">
+            <div class="w-12 h-12 lg:w-16 lg:h-16">
+              <img
+                class="rounded-md"
+                src="../../assets/LOGO-NexaShop.png"
+                alt="NexaShop Logo"
+              />
+            </div>
+            <h1 class="text-xl lg:text-2xl text-white font-bold">NexaShop</h1>
+          </div>
+
+          <!-- Categories Button -->
+          <div class="relative group hidden lg:block">
+            <button class="bg-btn px-6 py-3 rounded-xl flex items-center gap-3">
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <span class="font-bold text-white text-lg">Categories Items</span>
+            </button>
+          </div>
+
+          <!-- Search -->
+          <div class="flex-1 max-w-2xl w-full">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search for products, categories or brands..."
+                class="w-full px-6 py-3 rounded-lg text-gray-800 dark:text-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-300"
+              />
+              <button
+                class="bg-btn absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Account & Cart -->
+          <div class="flex items-center gap-4">
+            <button
+              class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-purple-600"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+              <span class="text-white hidden lg:inline">Account</span>
+            </button>
+
+            <button
+              class="relative flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-purple-600"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
+              </svg>
+              <span class="text-white hidden lg:inline">Cart</span>
+              <span
+                class="absolute -top-1 -right-1 bg-red-500 text-xs w-5 h-5 rounded-full flex items-center justify-center"
+              >
+                0
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav
+        class="bg-white dark:bg-gray-800 shadow-md border-t dark:border-gray-700"
+      >
+        <div class="container mx-auto px-4">
+          <ul class="flex items-center gap-8 py-4">
+            <li>
+              <a
+                href="../../index.html"
+                class="font-medium hover:text-purple-600"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./category.html"
+                class="font-medium hover:text-purple-600"
+                >Shop</a
+              >
+            </li>
+            <li>
+              <a
+                href="./aboutus.html"
+                class="font-medium hover:text-purple-600"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="./contact.html"
+                class="font-medium hover:text-purple-600"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- section -->
+    <section class="max-w-7xl mx-auto px-4 py-12">
+      <h2 class="text-3xl font-bold mb-8 text-left">Contact Us</h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <!-- Contact Form -->
+        <form class="bg-white p-6 rounded-lg shadow-md space-y-4">
+          <input
+            type="text"
+            placeholder="Name"
+            required
+            class="w-full border border-gray-300 p-3 rounded"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            class="w-full border border-gray-300 p-3 rounded"
+          />
+          <textarea
+            placeholder="Message"
+            rows="5"
+            required
+            class="w-full border border-gray-300 p-3 rounded"
+          ></textarea>
+          <label class="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              required
+              class="form-checkbox border border-black rounded-md p-3 cursor-pointer"
+            />
+            <span>I accept the Terms</span>
+          </label>
+          <button
+            type="submit"
+            class="bg-black text-white px-6 py-2 rounded hover:bg-gray-400"
+          >
+            Submit
+          </button>
+        </form>
+
+        <!-- Embedded Map -->
+        <div class="rounded-lg overflow-hidden shadow-md">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.953982004428!2d104.8885350759365!3d11.57378968862259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109511b3e4f9d2f%3A0x8f6c9c3e4d3f3c3e!2sToul%20Kork%20District!5e0!3m2!1sen!2skh!4v1700000000000"
+            width="100%"
+            height="100%"
+            style="min-height: 300px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Contact Options -->
+      <div class="grid md:grid-cols-4 gap-6 text-left">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="text-black text-3xl mb-2">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-1">Email</h3>
+          <p class="text-sm mb-2">
+            Our email support is available for customers who prefer detailed
+            communication. You can contact us anytime for inquiries about
+            products, orders, payments, or returns. We aim to respond to all
+            emails within 24 hours with clear and helpful solutions.
+          </p>
+          <a href="mailto:email@example.com" class="text-black underline"
+            >NexaShop@gmail.com</a
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="text-black text-3xl mb-2">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-1">Live Chat</h3>
+          <p class="text-sm mb-2">
+            Our live chat service provides fast and convenient support in real
+            time. If you need quick answers, product recommendations, or help
+            while shopping, our friendly support team is ready to assist you
+            during business hours.
+          </p>
+          <a href="#" class="text-black underline">Start new chat</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="text-black text-3xl mb-2">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-1">Phone</h3>
+          <p class="text-sm mb-2">
+            For urgent matters or direct assistance, you can reach us by phone.
+            Our customer service representatives are happy to help with order
+            tracking, technical issues, and general questions. Phone support is
+            available during our working hours.
+          </p>
+          <p class="text-black font-semibold">+855 (555) 000-0000</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="text-black text-3xl mb-2">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-1">Office</h3>
+          <p class="text-sm mb-2">
+            You are welcome to visit our office for official business,
+            partnerships, or customer service support. Our office handles
+            administration, customer care, and logistics to ensure smooth
+            operations and a great shopping experience.
+          </p>
+          <p class="text-black font-semibold">
+            123 Sample St, Sydney NSW 2000 AU
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-[#6f7680] text-white mt-6">
+      <!-- Top section -->
+      <div class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Logo + Title -->
+        <div class="flex items-center gap-6 mb-8">
+          <img
+            src="../../assets/sala.png"
+            alt="ISTAD Logo"
+            class="w-20 h-20 object-contain"
+          />
+          <h2 class="text-3xl font-bold">Sponsored and Organizing by ISTAD</h2>
+        </div>
+
+        <hr class="border-white/30 mb-10" />
+
+        <!-- Footer content -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+          <!-- Left -->
+          <div>
+            <img
+              src="../../assets/LOGO-NexaShop.png"
+              alt="NexaShop"
+              class="w-28 mb-4"
+            />
+          </div>
+          <div>
+            <h3 class="font-semibold mb-2">Do You Need Help ?</h3>
+            <p class="text-sm text-white/70 mb-6">
+              Subscribe to our newsletter to receive the latest deals, new
+              arrivals, and exclusive offers from NexaShop.
+            </p>
+
+            <div class="flex items-start gap-3 mb-4">
+              <span class="text-xl">📞</span>
+              <div>
+                <p class="text-sm">Monday–Friday: 08am–9pm</p>
+                <p class="text-lg font-semibold">01234-56789</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-xl">✉️</span>
+              <p class="text-sm">NexaShop@gmail.com</p>
+            </div>
+          </div>
+
+          <!-- Middle -->
+          <div>
+            <h3 class="font-semibold mb-4">Customer Service</h3>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li>Help Center</li>
+              <li>FAQs</li>
+              <li>Shipping & Delivery</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+            </ul>
+          </div>
+
+          <!-- Right -->
+          <div>
+            <h3 class="font-semibold mb-4">Get to Know Us</h3>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li>About Us</li>
+              <li>Contact</li>
+              <li>Customer reviews</li>
+              <li>Social Responsibility</li>
+              <li>Store Locations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="border-t border-white/30">
+        <div
+          class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-sm text-white/70">
+            Copyright 2025 © Shopstore WooCommerce WordPress Theme. Powered by
+            <span class="text-purple-300">BlackRise</span>
+          </p>
+
+          <!-- <div class="flex items-center gap-4">
+            <img src="visa.png" alt="Visa" class="h-6" />
+            <img src="mastercard.png" alt="Mastercard" class="h-6" />
+            <img src="paypal.png" alt="PayPal" class="h-6" />
+            <img src="skrill.png" alt="Skrill" class="h-6" />
+            <img src="klarna.png" alt="Klarna" class="h-6" />
+          </div> -->
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

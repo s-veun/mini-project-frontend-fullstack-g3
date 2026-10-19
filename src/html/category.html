@@ -1,0 +1,1774 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {},
+        },
+      };
+    </script>
+    <style>
+      * {
+        font-family: "DM Sans", sans-serif;
+      }
+      body {
+        transition:
+          background-color 0.5s,
+          color 0.5s;
+      }
+
+      .primary-color {
+        background-color: #634c9f;
+      }
+
+      .bg-btn {
+        background-color: #3c3068;
+      }
+
+      .bg-btn:hover {
+        background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+      }
+      .countdown-timer {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Banner -->
+    <div
+      class="primary-color dark:bg-gray-800 text-white py-3 text-center relative overflow-hidden"
+    >
+      <div class="absolute text-5xl font-bold inset-0 bg-black opacity-10">
+        0/0
+      </div>
+      <div
+        class="relative z-10 flex items-center justify-center gap-8 lg:gap-40 flex-wrap px-4"
+      >
+        <span class="font-medium text-sm lg:text-base">
+          🎉 FREE delivery & 40% Discount for next 3 orders! Place your 1st
+          order in:
+        </span>
+        <div class="flex items-center gap-2">
+          <span class="text-xs lg:text-sm">Until the end of the sale:</span>
+          <div class="countdown-timer flex gap-2">
+            <div class="text-xs lg:text-base">
+              <span id="days">37</span> days
+            </div>
+            <div class="text-xs lg:text-base">
+              <span id="hours">20</span> hours
+            </div>
+            <div class="text-xs lg:text-base">
+              <span id="minutes">54</span> minutes
+            </div>
+            <div class="text-xs lg:text-base">
+              <span id="seconds">34</span> sec
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header -->
+    <header class="primary-color dark:bg-gray-800 sticky top-0 z-50 shadow-lg">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between gap-4 flex-wrap">
+          <!-- Logo -->
+          <div class="flex items-center gap-2">
+            <div class="w-12 h-12 lg:w-16 lg:h-16">
+              <img
+                class="rounded-md"
+                src="../../assets/LOGO-NexaShop.png"
+                alt="NexaShop Logo"
+              />
+            </div>
+            <h1 class="text-xl lg:text-2xl text-white font-bold">NexaShop</h1>
+          </div>
+
+          <!-- Categories Button -->
+          <div class="relative group hidden lg:block">
+            <button class="bg-btn px-6 py-3 rounded-xl flex items-center gap-3">
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <span class="font-bold text-white text-lg">Categories Items</span>
+            </button>
+          </div>
+
+          <!-- Search -->
+          <div class="flex-1 max-w-2xl w-full">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search for products, categories or brands..."
+                class="w-full px-6 py-3 rounded-lg text-gray-800 dark:text-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-300"
+              />
+              <button
+                class="bg-btn absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Account & Cart -->
+          <div class="flex items-center gap-4">
+            <button
+              class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-purple-600"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+              <span class="text-white hidden lg:inline">Account</span>
+            </button>
+
+            <button
+              class="relative flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-purple-600"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
+              </svg>
+              <span class="text-white hidden lg:inline">Cart</span>
+              <span
+                class="absolute -top-1 -right-1 bg-red-500 text-xs w-5 h-5 rounded-full flex items-center justify-center"
+              >
+                0
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav
+        class="bg-white dark:bg-gray-800 shadow-md border-t dark:border-gray-700"
+      >
+        <div class="container mx-auto px-4">
+          <ul class="flex items-center gap-8 py-4">
+            <li>
+              <a
+                href="../../index.html"
+                class="font-medium hover:text-purple-600"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./category.html"
+                class="font-medium hover:text-purple-600"
+                >Shop</a
+              >
+            </li>
+            <li>
+              <a
+                href="./aboutus.html"
+                class="font-medium hover:text-purple-600"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="./contact.html"
+                class="font-medium hover:text-purple-600"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="mx-auto px-4 py-4 mt-5">
+      <div class="flex items-center justify-between">
+        <!-- Left side: Title and Breadcrumb -->
+        <div>
+          <h1 class="text-xl font-bold text-gray-900 mb-2">Categories</h1>
+          <nav class="flex items-center space-x-2 text-sm text-gray-600">
+            <a href="#" class="hover:text-gray-900">Home</a>
+            <span>›</span>
+            <!-- Selected Category Display -->
+            <div
+              id="selectedCategory"
+              class="font-semibold text-purple-600"
+            ></div>
+          </nav>
+        </div>
+
+        <!-- Right side: Sort dropdown -->
+        <div class="flex items-center space-x-2">
+          <span class="text-sm text-gray-700">Sort By :</span>
+          <div class="relative">
+            <select
+              id="categorySelect"
+              class="appearance-none bg-white border border-gray-300 rounded px-4 py-2 pr-8 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer"
+            >
+              <option value="">Default</option>
+              <option value="fruits">Fruits & Vegetables</option>
+              <option value="meat">Meat & Daily</option>
+              <option value="bakery">Bakery & Bread</option>
+              <option value="beverages">Beverages</option>
+              <option value="snacks">Snacks & Sweets</option>
+            </select>
+            <div
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+            >
+              <svg
+                class="fill-current h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto px-4 py-6 max-w-7xl">
+      <div id="productsGrid" class="grid grid-cols-5 gap-4">
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/1200x/62/a8/bd/62a8bd58fbc9bb5d7e5517ac0d2d1ce6.jpg"
+              alt="Apple"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">Summer Special Best natural</p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$2.50</span>
+              <span class="text-gray-400 line-through text-sm">$4.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/1200x/c2/29/0c/c2290cb8d20cda16279d17ca1841ad44.jpg"
+              alt="Mangosteen"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">Sweet, juicy, and tangy</p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$2.50</span>
+              <span class="text-gray-400 line-through text-sm">$4.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/1200x/02/e5/18/02e51833ced86fea65c477f818b94f30.jpg"
+              alt="Durian"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">Rich, creamy, and fragrant</p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$2.50</span>
+              <span class="text-gray-400 line-through text-sm">$4.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/1200x/0d/2a/c1/0d2ac1d3cb3c5e82fb563447f7daa1da.jpg"
+              alt="Lychee"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">
+            Perfect for snacks, desserts, and refreshing drinks
+          </p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$10.00</span>
+              <span class="text-gray-400 line-through text-sm">$16.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/736x/c5/7d/5a/c57d5a00e7d819e0910bc73b145a8b88.jpg"
+              alt="Dragon Fruit"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">
+            Exotic, juicy, and nutritious
+          </p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$2.50</span>
+              <span class="text-gray-400 line-through text-sm">$4.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/736x/a1/5b/e7/a15be7bd74506fee3879f5b9be70b7dd.jpg"
+              alt="Watermelon"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">Sweet, juicy, and refreshing</p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$2.50</span>
+              <span class="text-gray-400 line-through text-sm">$4.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/1200x/fb/8f/a2/fb8fa2f8a1ae26801e59cc957eb68798.jpg"
+              alt="Tomato"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">
+            Juicy, ripe, and full of natural flavor.
+          </p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$3.50</span>
+              <span class="text-gray-400 line-through text-sm">$4.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/736x/ea/4f/8a/ea4f8a9e575cfb71f3a308459f8ca585.jpg"
+              alt="Lemon"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">
+            Tangy, fresh, and full of citrus flavor
+          </p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$2.50</span>
+              <span class="text-gray-400 line-through text-sm">$4.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/736x/15/61/12/15611267e36aa37227ae80a20de847f4.jpg"
+              alt="Kiwi"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">
+            High-quality kiwis rich in vitamin C, fiber, and antioxidants
+          </p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$18.00</span>
+              <span class="text-gray-400 line-through text-sm">$20.00</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/736x/d7/1b/cb/d71bcbff24b082977ec61e4adf260c4e.jpg"
+              alt="Pineapple"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">
+            Great for snacks, juice, and desserts.
+          </p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$1.50</span>
+              <span class="text-gray-400 line-through text-sm">$2.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/1200x/e8/ee/c7/e8eec7ac975ea38900cf51f9e6d488ab.jpg"
+              alt="Avocado"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">
+            Creamy, nutritious, and rich in healthy fats
+          </p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$4.50</span>
+              <span class="text-gray-400 line-through text-sm">$5.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/1200x/08/8e/ae/088eaea64cf379c3c7d062dbcc0b1749.jpg"
+              alt="Mango"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">
+            Sweet, juicy, and full of tropical flavor
+          </p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$0.50</span>
+              <span class="text-gray-400 line-through text-sm">$1.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/736x/93/90/e6/9390e6cd144f89705ab95dcb0c60fb41.jpg"
+              alt="Grape"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">
+            Juicy, sweet, and full of natural flavor.
+          </p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$8.50</span>
+              <span class="text-gray-400 line-through text-sm">$15.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/1200x/42/d7/2a/42d72a0bf2973fcf5d3bc5f5556e882a.jpg"
+              alt="Banana"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">
+            Naturally sweet and rich in nutrients
+          </p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$1.50</span>
+              <span class="text-gray-400 line-through text-sm">$2.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors"
+          >
+            <i class="far fa-heart text-lg"></i>
+          </button>
+          <div class="mb-4">
+            <img
+              src="https://i.pinimg.com/1200x/8d/cf/e2/8dcfe2a785ba01c4b3995ac18005402d.jpg"
+              alt="orange"
+              class="w-full h-40 object-contain"
+            />
+          </div>
+          <div class="flex items-center mb-2">
+            <div class="flex text-yellow-400 text-xs">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-xs ml-1">2</span>
+          </div>
+          <p class="text-xs text-gray-500 mb-1">
+            Juicy, sweet, and full of vitamin C
+          </p>
+          <p class="text-sm font-medium text-gray-900 mb-3">fruit</p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-red-500 font-bold text-base">$3.00</span>
+              <span class="text-gray-400 line-through text-sm">$5.50</span>
+            </div>
+            <button
+              class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#6f7680] text-white mt-6">
+      <!-- Top section -->
+      <div class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Logo + Title -->
+        <div class="flex items-center gap-6 mb-8">
+          <img
+            src="../../assets/sala.png"
+            alt="ISTAD Logo"
+            class="w-20 h-20 object-contain"
+          />
+          <h2 class="text-3xl font-bold">Sponsored and Organizing by ISTAD</h2>
+        </div>
+
+        <hr class="border-white/30 mb-10" />
+
+        <!-- Footer content -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+          <!-- Left -->
+          <div>
+            <img
+              src="../../assets/LOGO-NexaShop.png"
+              alt="NexaShop"
+              class="w-28 mb-4"
+            />
+          </div>
+          <div>
+            <h3 class="font-semibold mb-2">Do You Need Help ?</h3>
+            <p class="text-sm text-white/70 mb-6">
+              Subscribe to our newsletter to receive the latest deals, new
+              arrivals, and exclusive offers from NexaShop.
+            </p>
+
+            <div class="flex items-start gap-3 mb-4">
+              <span class="text-xl">📞</span>
+              <div>
+                <p class="text-sm">Monday–Friday: 08am–9pm</p>
+                <p class="text-lg font-semibold">01234-56789</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-xl">✉️</span>
+              <p class="text-sm">NexaShop@gmail.com</p>
+            </div>
+          </div>
+
+          <!-- Middle -->
+          <div>
+            <h3 class="font-semibold mb-4">Customer Service</h3>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li>Help Center</li>
+              <li>FAQs</li>
+              <li>Shipping & Delivery</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+            </ul>
+          </div>
+
+          <!-- Right -->
+          <div>
+            <h3 class="font-semibold mb-4">Get to Know Us</h3>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li>About Us</li>
+              <li>Contact</li>
+              <li>Customer reviews</li>
+              <li>Social Responsibility</li>
+              <li>Store Locations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="border-t border-white/30">
+        <div
+          class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-sm text-white/70">
+            Copyright 2025 © Shopstore WooCommerce WordPress Theme. Powered by
+            <span class="text-purple-300">BlackRise</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Product data organized by category
+      const products = {
+        fruits: [
+          {
+            name: "Fresh Apple",
+            description: "Summer Special Best natural",
+            price: 2.5,
+            oldPrice: 4.5,
+            image:
+              "https://i.pinimg.com/1200x/62/a8/bd/62a8bd58fbc9bb5d7e5517ac0d2d1ce6.jpg",
+            rating: 5,
+          },
+          {
+            name: "Mangosteen",
+            description: "Sweet, juicy, and tangy",
+            price: 2.5,
+            oldPrice: 4.5,
+            image:
+              "https://i.pinimg.com/1200x/c2/29/0c/c2290cb8d20cda16279d17ca1841ad44.jpg",
+            rating: 5,
+          },
+          {
+            name: "Durian",
+            description: "Rich, creamy, and fragrant",
+            price: 2.5,
+            oldPrice: 4.5,
+            image:
+              "https://i.pinimg.com/1200x/02/e5/18/02e51833ced86fea65c477f818b94f30.jpg",
+            rating: 5,
+          },
+          {
+            name: "Lychee",
+            description: "Perfect for snacks, desserts, and refreshing drinks",
+            price: 10.0,
+            oldPrice: 16.5,
+            image:
+              "https://i.pinimg.com/1200x/0d/2a/c1/0d2ac1d3cb3c5e82fb563447f7daa1da.jpg",
+            rating: 5,
+          },
+          {
+            name: "Dragon Fruit",
+            description: "Exotic, juicy, and nutritious",
+            price: 2.5,
+            oldPrice: 4.5,
+            image:
+              "https://i.pinimg.com/736x/c5/7d/5a/c57d5a00e7d819e0910bc73b145a8b88.jpg",
+            rating: 5,
+          },
+          {
+            name: "Watermelon",
+            description: "Sweet, juicy, and refreshing",
+            price: 2.5,
+            oldPrice: 4.5,
+            image:
+              "https://i.pinimg.com/736x/a1/5b/e7/a15be7bd74506fee3879f5b9be70b7dd.jpg",
+            rating: 5,
+          },
+          {
+            name: "Tomato",
+            description: "Juicy, ripe, and full of natural flavor",
+            price: 3.5,
+            oldPrice: 4.5,
+            image:
+              "https://i.pinimg.com/1200x/fb/8f/a2/fb8fa2f8a1ae26801e59cc957eb68798.jpg",
+            rating: 5,
+          },
+          {
+            name: "Lemon",
+            description: "Tangy, fresh, and full of citrus flavor",
+            price: 2.5,
+            oldPrice: 4.5,
+            image:
+              "https://i.pinimg.com/736x/ea/4f/8a/ea4f8a9e575cfb71f3a308459f8ca585.jpg",
+            rating: 5,
+          },
+          {
+            name: "Kiwi",
+            description: "High-quality kiwis rich in vitamin C",
+            price: 18.0,
+            oldPrice: 20.0,
+            image:
+              "https://i.pinimg.com/736x/15/61/12/15611267e36aa37227ae80a20de847f4.jpg",
+            rating: 5,
+          },
+          {
+            name: "Pineapple",
+            description: "Great for snacks, juice, and desserts",
+            price: 1.5,
+            oldPrice: 2.5,
+            image:
+              "https://i.pinimg.com/736x/d7/1b/cb/d71bcbff24b082977ec61e4adf260c4e.jpg",
+            rating: 5,
+          },
+          {
+            name: "Avocado",
+            description: "Creamy, nutritious, and rich in healthy fats",
+            price: 4.5,
+            oldPrice: 5.5,
+            image:
+              "https://i.pinimg.com/1200x/e8/ee/c7/e8eec7ac975ea38900cf51f9e6d488ab.jpg",
+            rating: 5,
+          },
+          {
+            name: "Mango",
+            description: "Sweet, juicy, and full of tropical flavor",
+            price: 0.5,
+            oldPrice: 1.5,
+            image:
+              "https://i.pinimg.com/1200x/08/8e/ae/088eaea64cf379c3c7d062dbcc0b1749.jpg",
+            rating: 5,
+          },
+          {
+            name: "Grape",
+            description: "Juicy, sweet, and full of natural flavor",
+            price: 8.5,
+            oldPrice: 15.5,
+            image:
+              "https://i.pinimg.com/736x/93/90/e6/9390e6cd144f89705ab95dcb0c60fb41.jpg",
+            rating: 5,
+          },
+          {
+            name: "Banana",
+            description: "Naturally sweet and rich in nutrients",
+            price: 1.5,
+            oldPrice: 2.5,
+            image:
+              "https://i.pinimg.com/1200x/42/d7/2a/42d72a0bf2973fcf5d3bc5f5556e882a.jpg",
+            rating: 5,
+          },
+          {
+            name: "Orange",
+            description: "Juicy, sweet, and full of vitamin C",
+            price: 3.0,
+            oldPrice: 5.5,
+            image:
+              "https://i.pinimg.com/1200x/8d/cf/e2/8dcfe2a785ba01c4b3995ac18005402d.jpg",
+            rating: 5,
+          },
+        ],
+        meat: [
+          {
+            name: "Fresh Beef Steak",
+            description:
+              "Premium quality meatPerfect for grilling, pan-searing, or your favorite recipes",
+            price: 12.5,
+            oldPrice: 15.0,
+            image:
+              "https://i.pinimg.com/1200x/8b/bf/60/8bbf60a0da4737b9eb4418be536ee851.jpg",
+            rating: 5,
+          },
+          {
+            name: "Greek Fish",
+            description: "Tender, flavorful, and perfect for grilling, baking,",
+            price: 8.5,
+            oldPrice: 10.5,
+            image:
+              "https://i.pinimg.com/1200x/e8/60/b4/e860b420d9c6c518ff498be346c8defd.jpg",
+            rating: 5,
+          },
+          {
+            name: "Fresh Salmon",
+            description:
+              "Tender, flavorful, and rich in omega-3. Perfect for grilling, or sushi.",
+            price: 25.0,
+            oldPrice: 19.0,
+            image:
+              "https://i.pinimg.com/736x/07/33/b5/0733b542138501604a84e683b8f2e4e0.jpg",
+            rating: 5,
+          },
+          {
+            name: "Shrimp",
+            description: "Tender, juicy, and delicious.",
+            price: 14.0,
+            oldPrice: 17.0,
+            image:
+              "https://i.pinimg.com/1200x/96/ec/d8/96ecd88b34b9f53f49947b823402df01.jpg",
+            rating: 5,
+          },
+          {
+            name: "Pork Chops",
+            description: "Tender, juicy, and full of flavor",
+            price: 10.0,
+            oldPrice: 12.5,
+            image:
+              "https://i.pinimg.com/1200x/92/96/d5/9296d5fa0dee0ca2c38331b97ae88da6.jpg",
+            rating: 5,
+          },
+          {
+            name: "Crab",
+            description: "Tender, juicy, and full of natural flavor",
+            price: 10.0,
+            oldPrice: 12.5,
+            image:
+              "https://i.pinimg.com/736x/40/d5/82/40d58226e15b23cbf2a739726760d643.jpg",
+            rating: 5,
+          },
+          {
+            name: "Octopus",
+            description: "Soft, tasty octopus perfect for seafood dishes",
+            price: 10.0,
+            oldPrice: 12.5,
+            image:
+              "https://i.pinimg.com/736x/f1/59/65/f15965fc1012080a0afbdb47e63463c0.jpg",
+            rating: 5,
+          },
+          {
+            name: "white pomfret",
+            description: "Fresh white pomfret with soft, delicate flavor",
+            price: 10.0,
+            oldPrice: 15.5,
+            image:
+              "https://i.pinimg.com/1200x/bb/26/73/bb26734b132063c04d2031d7dcc99fa1.jpg",
+            rating: 5,
+          },
+          {
+            name: "Tilapia",
+            description: "Tender tilapia perfect for everyday cooking",
+            price: 1.0,
+            oldPrice: 2.5,
+            image:
+              "https://i.pinimg.com/736x/dd/a6/a6/dda6a6e76ef9f869e13a645a84be4242.jpg",
+            rating: 5,
+          },
+          {
+            name: "Red Snapper",
+            description: "Premium red snapper, rich and delicious flavor",
+            price: 10.0,
+            oldPrice: 15.0,
+            image:
+              "https://i.pinimg.com/736x/35/8f/4f/358f4f4b11df7a9978f4b79655e1d37a.jpg",
+            rating: 5,
+          },
+          {
+            name: "Fresh Milk",
+            description: "Organic whole milk",
+            price: 4.5,
+            oldPrice: 6.0,
+            image:
+              "https://i.pinimg.com/1200x/6b/18/f1/6b18f1a78dedb6b58296b6843e7e4643.jpg",
+            rating: 5,
+          },
+          {
+            name: "Greek Yogurt",
+            description: "High protein snack",
+            price: 3.5,
+            oldPrice: 5.0,
+            image:
+              "https://i.pinimg.com/1200x/2c/a3/62/2ca36257634728a19d2ceb2eb6b3c01a.jpg",
+            rating: 5,
+          },
+          {
+            name: "Cheddar Cheese",
+            description: "Aged to perfection",
+            price: 6.0,
+            oldPrice: 8.0,
+            image:
+              "https://i.pinimg.com/736x/91/40/2a/91402ad8144f190fcfdb8567d4776c54.jpg",
+            rating: 5,
+          },
+          {
+            name: "Fresh Eggs",
+            description: "Farm fresh organic",
+            price: 5.5,
+            oldPrice: 7.0,
+            image:
+              "https://i.pinimg.com/736x/1b/3e/0b/1b3e0b856b8937e09353290c7f9e3f88.jpg",
+            rating: 5,
+          },
+          {
+            name: "Butter",
+            description: "Pure cream butter",
+            price: 4.0,
+            oldPrice: 5.5,
+            image:
+              "https://i.pinimg.com/1200x/55/c5/6a/55c56ac7dbb7af5c594c6f31e84a1a94.jpg",
+            rating: 5,
+          },
+        ],
+        bakery: [
+          {
+            name: " Cake",
+            description: "Soft, sweet cake perfect for any occasion",
+            price: 2.0,
+            oldPrice: 3.0,
+            image:
+              "https://i.pinimg.com/1200x/72/df/f5/72dff5e0675ee167a4e309163b86a8b2.jpg",
+            rating: 5,
+          },
+          {
+            name: "  sliced bread",
+            description: "Moist cake with irresistible sweet flavor",
+            price: 4.0,
+            oldPrice: 5.5,
+            image:
+              "https://i.pinimg.com/736x/66/fb/bf/66fbbf924f8c7e9c4477965ca02918f7.jpg",
+            rating: 5,
+          },
+          {
+            name: " sliced bread",
+            description: "Soft white sliced bread, fresh and fluffy",
+            price: 4.0,
+            oldPrice: 6.5,
+            image:
+              "https://i.pinimg.com/736x/33/a7/9d/33a79d95b924ac2f45f4a0c7c5324279.jpg",
+            rating: 5,
+          },
+          {
+            name: " white sliced bread",
+            description: "Soft white sliced bread, fresh and fluffy",
+            price: 3.0,
+            oldPrice: 4.5,
+            image:
+              "https://i.pinimg.com/736x/d8/91/bc/d891bc33d572dd1d235f8defd842fb67.jpg",
+            rating: 5,
+          },
+          {
+            name: " white sliced bread",
+            description: "Soft white sliced bread, fresh and fluffy",
+            price: 3.0,
+            oldPrice: 5.5,
+            image:
+              "https://i.pinimg.com/736x/9f/fe/9b/9ffe9b4bf878d721aeec95a44283ec4d.jpg",
+            rating: 5,
+          },
+          {
+            name: "Fresh Bread",
+            description: "Baked daily in store",
+            price: 3.5,
+            oldPrice: 5.0,
+            image:
+              "https://i.pinimg.com/736x/ee/6d/5b/ee6d5b33a2920efc4b567318dc331e6a.jpg",
+            rating: 5,
+          },
+          {
+            name: "Croissant",
+            description: "Buttery and flaky",
+            price: 2.5,
+            oldPrice: 4.0,
+            image:
+              "https://i.pinimg.com/736x/19/b6/6a/19b66adaa53752092698ba162b70cdda.jpg",
+            rating: 5,
+          },
+          {
+            name: "Bagels",
+            description: "Fresh baked morning",
+            price: 4.0,
+            oldPrice: 6.0,
+            image:
+              "https://i.pinimg.com/736x/b1/32/92/b13292ef9fde882ba937eebb74be0d20.jpg",
+            rating: 5,
+          },
+          {
+            name: "Donuts",
+            description: "Sweet treats daily",
+            price: 5.0,
+            oldPrice: 7.0,
+            image:
+              "https://i.pinimg.com/736x/97/15/38/971538677bebc798e80cdb9189b1506e.jpg",
+            rating: 5,
+          },
+          {
+            name: "Muffins",
+            description: "Freshly baked",
+            price: 3.0,
+            oldPrice: 4.5,
+            image:
+              "https://i.pinimg.com/736x/3c/ac/17/3cac1707758d245314e557d254c9b70d.jpg",
+            rating: 5,
+          },
+          {
+            name: "Double Cheeseburger.",
+            description: "Juicy double cheeseburger with melted cheese",
+            price: 4.0,
+            oldPrice: 5.5,
+            image:
+              "https://i.pinimg.com/736x/b5/0e/af/b50eaf7685a5dce9af864f67d43664a8.jpg",
+            rating: 5,
+          },
+          {
+            name: "waffles ",
+            description: "Crispy waffles with soft, fluffy inside",
+            price: 3.0,
+            oldPrice: 4.5,
+            image:
+              "https://i.pinimg.com/1200x/6a/99/f2/6a99f2bb67d3ae14e320ce94754a3708.jpg",
+            rating: 5,
+          },
+          {
+            name: "croissant",
+            description: "Fresh croissant perfect for breakfast",
+            price: 2.0,
+            oldPrice: 2.5,
+            image:
+              "https://i.pinimg.com/736x/ee/99/67/ee9967fb1db17f2fecd23309e45f366b.jpg",
+            rating: 5,
+          },
+          {
+            name: "white sliced bread",
+            description: "Soft white sliced bread, fresh and fluffy",
+            price: 2.0,
+            oldPrice: 2.5,
+            image:
+              "https://i.pinimg.com/736x/91/69/c5/9169c546774e2a44d421dcf2692d66ec.jpg",
+            rating: 5,
+          },
+          {
+            name: " white sliced bread",
+            description: "Soft white sliced bread, fresh and fluffy",
+            price: 4.0,
+            oldPrice: 5.5,
+            image:
+              "https://i.pinimg.com/736x/81/77/14/817714d67126da52defa242c81010050.jpg",
+            rating: 5,
+          },
+        ],
+
+        beverages: [
+          {
+            name: "Orange Juice",
+            description: "Freshly squeezed",
+            price: 4.5,
+            oldPrice: 6.0,
+            image:
+              "https://i.pinimg.com/1200x/43/b9/e5/43b9e59db22943da24b85330d1fb13ab.jpg",
+            rating: 5,
+          },
+          {
+            name: "Coffee Beans",
+            description: "Premium roast",
+            price: 12.0,
+            oldPrice: 15.0,
+            image:
+              "https://i.pinimg.com/736x/4b/da/36/4bda3620d81283b17dd145c4e6b05797.jpg",
+            rating: 5,
+          },
+          {
+            name: "Green Tea",
+            description: "Organic loose leaf",
+            price: 8.0,
+            oldPrice: 10.0,
+            image:
+              "https://i.pinimg.com/1200x/f3/35/3d/f3353da22218a4de90629ea801d6d0ff.jpg",
+            rating: 5,
+          },
+          {
+            name: "Sparkling Water",
+            description: "Naturally carbonated",
+            price: 3.0,
+            oldPrice: 4.5,
+            image:
+              "https://i.pinimg.com/1200x/a9/bf/68/a9bf682e99368036e3f137d18c9b8081.jpg",
+            rating: 5,
+          },
+          {
+            name: "Energy Drink",
+            description: "Boost your energy",
+            price: 3.5,
+            oldPrice: 5.0,
+            image:
+              "https://i.pinimg.com/736x/20/6c/2a/206c2af6788a8148ed92c1d87ed1440b.jpg",
+            rating: 5,
+          },
+          {
+            name: "Coca cola",
+            description: "Chilled Coca-Cola, crisp and sweet flavor",
+            price: 0.5,
+            oldPrice: 1.0,
+            image:
+              "https://i.pinimg.com/736x/a3/51/85/a35185a6fa10334c7e97de13dc8d3b77.jpg",
+            rating: 5,
+          },
+          {
+            name: "Fanta",
+            description: "Refreshing Fanta with classic fizzy taste",
+            price: 0.5,
+            oldPrice: 1.0,
+            image:
+              "https://i.pinimg.com/1200x/0c/7f/71/0c7f715767d70087c1659adad03c2e1e.jpg",
+            rating: 5,
+          },
+          {
+            name: "Sprite",
+            description: "Fresh, fizzy Sprite perfect for any meal",
+            price: 0.5,
+            oldPrice: 1.0,
+            image:
+              "https://i.pinimg.com/736x/0f/3f/0c/0f3f0ca59bf74ea76d1bdd725ea2e251.jpg",
+            rating: 5,
+          },
+          {
+            name: "Pepsi",
+            description: "Classic Pepsi, perfect for any meal",
+            price: 0.5,
+            oldPrice: 1.0,
+            image:
+              "https://i.pinimg.com/736x/96/8d/15/968d15ed16d1fff27941c215802bfddd.jpg",
+            rating: 5,
+          },
+          {
+            name: "Coke",
+            description: "Refreshing coke with bold, fizzy flavor",
+            price: 0.5,
+            oldPrice: 1.0,
+            image:
+              "https://i.pinimg.com/736x/93/11/19/93111939b66b53676c130745ad446799.jpg",
+            rating: 5,
+          },
+          {
+            name: "Poopsi",
+            description: "Refreshing Coke with classic fizzy taste",
+            price: 0.5,
+            oldPrice: 1.0,
+            image:
+              "https://i.pinimg.com/736x/aa/2a/ee/aa2aeecefbdd32655c75b9b8ec7b3eed.jpg",
+            rating: 5,
+          },
+          {
+            name: "Mix Blueberry",
+            description: "Classic Coke, perfect for any meal",
+            price: 0.5,
+            oldPrice: 1.0,
+            image:
+              "https://i.pinimg.com/736x/c2/21/2e/c2212e9cf0cf2af524dff37524d8c9b9.jpg",
+            rating: 5,
+          },
+          {
+            name: "Olipop",
+            description: "Refreshing coke with bold, fizzy flavor",
+            price: 0.5,
+            oldPrice: 1.0,
+            image:
+              "https://i.pinimg.com/736x/a3/0e/14/a30e147e7fd7e3dc2351902e86999cae.jpg",
+            rating: 5,
+          },
+          {
+            name: "Milk Tea",
+            description: "Fresh milk tea, perfect for any time",
+            price: 0.5,
+            oldPrice: 1.0,
+            image:
+              "https://i.pinimg.com/1200x/56/44/d1/5644d10bade293d389f1d6d5ce8fbefb.jpg",
+            rating: 5,
+          },
+          {
+            name: "Tea",
+            description: "Sweet, refreshing milk tea with rich taste",
+            price: 0.5,
+            oldPrice: 1.0,
+            image:
+              "https://i.pinimg.com/1200x/fd/ae/fb/fdaefb49acd6685439cb79aef5c5fa92.jpg",
+            rating: 5,
+          },
+        ],
+        snacks: [
+          {
+            name: "Potato Chips",
+            description: "Crispy and salty",
+            price: 3.5,
+            oldPrice: 5.0,
+            image:
+              "https://i.pinimg.com/1200x/aa/9d/80/aa9d8070b22c9e9c494ce29ecba0669d.jpg",
+            rating: 5,
+          },
+          {
+            name: "Chocolate Bar",
+            description: "Premium dark chocolate",
+            price: 2.5,
+            oldPrice: 4.0,
+            image:
+              "https://i.pinimg.com/736x/50/7d/f3/507df3fa48c321a0aea520b3a76a0603.jpg",
+            rating: 5,
+          },
+          {
+            name: "Mixed Nuts",
+            description: "Healthy snack mix",
+            price: 6.0,
+            oldPrice: 8.0,
+            image:
+              "https://i.pinimg.com/1200x/66/ec/00/66ec007aaef0dce914a603e45ee9413c.jpg",
+            rating: 5,
+          },
+          {
+            name: "Cookies",
+            description: "Homemade recipe",
+            price: 4.5,
+            oldPrice: 6.0,
+            image:
+              "https://i.pinimg.com/736x/f7/9f/62/f79f62f81dd5c8e62fcf49634ed634dd.jpg",
+            rating: 5,
+          },
+          {
+            name: "Candy Mix",
+            description: "Sweet assortment",
+            price: 5.0,
+            oldPrice: 7.0,
+            image:
+              "https://i.pinimg.com/736x/55/ab/f2/55abf2b9aacd882ae49d3f55052cbc49.jpg",
+            rating: 5,
+          },
+          {
+            name: "Nutella",
+            description: "Creamy chocolate-hazelnut spread, perfect for toast",
+            price: 5.0,
+            oldPrice: 6.0,
+            image:
+              "https://i.pinimg.com/1200x/b9/12/be/b912be58fd415901f4cb65e084b6b337.jpg",
+            rating: 5,
+          },
+          {
+            name: "Chocolate",
+            description: " Classic chocolate for chocolate lovers",
+            price: 0.5,
+            oldPrice: 1.0,
+            image:
+              "https://i.pinimg.com/736x/5f/03/25/5f0325035fad51dc974ee7f883af5bb6.jpg",
+            rating: 5,
+          },
+          {
+            name: "Nutella",
+            description: "Creamy chocolate-hazelnut spread, perfect for toast",
+            price: 0.25,
+            oldPrice: 0.5,
+            image:
+              "https://i.pinimg.com/736x/a1/56/17/a15617b36b16a8cfd893787697441b30.jpg",
+            rating: 5,
+          },
+          {
+            name: "Pocky",
+            description: "Sweet assortment",
+            price: 1.0,
+            oldPrice: 2.0,
+            image:
+              "https://i.pinimg.com/1200x/45/aa/6a/45aa6ac06aeed9241ce1b07294adc473.jpg",
+            rating: 5,
+          },
+          {
+            name: "Ice Cream",
+            description: "Premium vanilla",
+            price: 6.5,
+            oldPrice: 8.5,
+            image:
+              "https://i.pinimg.com/1200x/fa/44/49/fa44493d2a5c4e54de43e04c4c1a7653.jpg",
+            rating: 5,
+          },
+          {
+            name: "Frozen Berries",
+            description: "Mixed berry blend",
+            price: 5.5,
+            oldPrice: 7.5,
+            image:
+              "https://i.pinimg.com/1200x/b3/b7/77/b3b7774022d76cb400739d8ea5dffe09.jpg",
+            rating: 5,
+          },
+          {
+            name: "Taramisu",
+            description: "Classic tiramisu with creamy, coffee-flavored layers",
+            price: 5.5,
+            oldPrice: 7.5,
+            image:
+              "https://i.pinimg.com/736x/4d/05/d9/4d05d985052202807635645385a64a8f.jpg",
+            rating: 5,
+          },
+          {
+            name: "Frozen Berries",
+            description: "Mixed berry blend",
+            price: 5.5,
+            oldPrice: 7.5,
+            image:
+              "https://i.pinimg.com/1200x/b3/b7/77/b3b7774022d76cb400739d8ea5dffe09.jpg",
+            rating: 5,
+          },
+          {
+            name: "Frozen Berries",
+            description: "Mixed berry blend",
+            price: 5.5,
+            oldPrice: 7.5,
+            image:
+              "https://i.pinimg.com/1200x/b3/b7/77/b3b7774022d76cb400739d8ea5dffe09.jpg",
+            rating: 5,
+          },
+          {
+            name: "Frozen Berries",
+            description: "Mixed berry blend",
+            price: 5.5,
+            oldPrice: 7.5,
+            image:
+              "https://i.pinimg.com/1200x/b3/b7/77/b3b7774022d76cb400739d8ea5dffe09.jpg",
+            rating: 5,
+          },
+          {
+            name: "Frozen Berries",
+            description: "Mixed berry blend",
+            price: 5.5,
+            oldPrice: 7.5,
+            image:
+              "https://i.pinimg.com/1200x/b3/b7/77/b3b7774022d76cb400739d8ea5dffe09.jpg",
+            rating: 5,
+          },
+        ],
+      };
+
+      // Function to create a product card
+      function createProductCard(product) {
+        return `
+                <div class="bg-white rounded-lg border border-gray-300 p-4 relative hover:shadow-md transition-shadow">
+                    <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors heart-btn">
+                        <i class="far fa-heart text-lg"></i>
+                    </button>
+                    <div class="mb-4">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-40 object-contain">
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <div class="flex text-yellow-400 text-xs">
+                            ${Array(product.rating).fill('<i class="fas fa-star"></i>').join("")}
+                        </div>
+                        <span class="text-gray-400 text-xs ml-1">2</span>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-1">${product.description}</p>
+                    <p class="text-sm font-medium text-gray-900 mb-3">${product.name}</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="text-red-500 font-bold text-base">$${product.price.toFixed(2)}</span>
+                            <span class="text-gray-400 line-through text-sm">$${product.oldPrice.toFixed(2)}</span>
+                        </div>
+                        <button class="border border-gray-300 text-gray-700 px-3 py-1.5 rounded text-xs hover:bg-gray-50 transition-colors">Add to cart</button>
+                    </div>
+                </div>
+            `;
+      }
+
+      // Function to display products
+      function displayProducts(category) {
+        const productsGrid = document.getElementById("productsGrid");
+        const selectedCategoryDiv = document.getElementById("selectedCategory");
+
+        if (!category || category === "") {
+          // Show all products
+          let allProducts = [];
+          Object.keys(products).forEach((cat) => {
+            allProducts = allProducts.concat(products[cat]);
+          });
+          productsGrid.innerHTML = allProducts
+            .map((product) => createProductCard(product))
+            .join("");
+          selectedCategoryDiv.textContent = "All Products";
+        } else {
+          // Show products from selected category
+          const categoryProducts = products[category] || [];
+          productsGrid.innerHTML = categoryProducts
+            .map((product) => createProductCard(product))
+            .join("");
+
+          // Update category name display
+          const categoryNames = {
+            fruits: "Fruits & Vegetables",
+            meat: "Meat & Daily",
+            bakery: "Bakery & Bread",
+            beverages: "Beverages",
+            snacks: "Snacks & Sweets",
+            frozen: "Frozen Foods",
+          };
+          selectedCategoryDiv.textContent = categoryNames[category];
+        }
+
+        // Re-attach heart button listeners
+        attachHeartListeners();
+      }
+
+      // Function to attach heart button listeners
+      function attachHeartListeners() {
+        document.querySelectorAll(".heart-btn").forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            const heart = this.querySelector(".fa-heart");
+            if (heart.classList.contains("far")) {
+              heart.classList.remove("far");
+              heart.classList.add("fas");
+            } else {
+              heart.classList.remove("fas");
+              heart.classList.add("far");
+            }
+          });
+        });
+      }
+
+      // Category selection handler
+      const categorySelect = document.getElementById("categorySelect");
+      categorySelect.addEventListener("change", function () {
+        displayProducts(this.value);
+      });
+
+      // Initialize with all products on page load
+      displayProducts("");
+    </script>
+  </body>
+</html>

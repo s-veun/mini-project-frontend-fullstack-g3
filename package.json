@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "preline": "^4.2.0",
+    "tailwindcss": "^4.1.18"
+  },
+  "scripts": {
+    "dev": "npm run watch:css & npm run watch:ts & wait",
+    "watch:css": "tailwindcss -i ./src/index.css -o ./assets/css/output.css --watch",
+    "watch:ts": "tsc -p tsconfig.json --watch",
+    "build": "npm run build:css && npm run build:ts",
+    "build:css": "tailwindcss -i ./src/index.css -o ./assets/css/output.css --minify",
+    "build:ts": "tsc -p tsconfig.json"
+  },
+  "name": "green-market",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Green Market — good food, close to home.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Houngmingyeak/NexaShop-mini-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Houngmingyeak/NexaShop-mini-project/issues"
+  },
+  "homepage": "https://github.com/Houngmingyeak/NexaShop-mini-project#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "typescript": "^7.0.2"
+  }
+}

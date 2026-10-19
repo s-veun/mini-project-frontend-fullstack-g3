@@ -1,0 +1,134 @@
+* {
+  font-family: "DM Sans", sans-serif;
+}
+
+.primary-color {
+  background-color: #634c9f;
+}
+
+.secondary-color {
+  background-color: #db9fdb;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  background: white;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: white;
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #e9d5ff 0%, #ddd6fe 100%);
+}
+
+.gradient-teal {
+  background: linear-gradient(135deg, #5eead4 0%, #6ee7b7 100%);
+}
+
+.gradient-orange {
+  background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+}
+
+.gradient-yellow {
+  background: linear-gradient(135deg, #fde047 0%, #facc15 100%);
+}
+
+.countdown-timer {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+}
+
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.banner-badge {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.product-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image-container img {
+  transition: transform 0.5s ease;
+}
+
+.product-image-container:hover img {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* Add to your app.css file */
+.bg-btn {
+  background-color: #3c3068;
+}
+
+.bg-btn:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+/* Custom scrollbar for dropdown */
+.dropdown-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e0 #f7fafc;
+}
+
+.dropdown-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-track {
+  background: #f7fafc;
+  border-radius: 3px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb {
+  background-color: #cbd5e0;
+  border-radius: 3px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.category-card {
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,1560 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../output.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <title>Contact Us - NexaShop</title>
+  <link rel="shortcut icon" href="../../assets/nexa.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#634C9F',
+            secondary: '#DB9FDB',
+            dark: {
+              50: '#f9fafb',
+              100: '#f3f4f6',
+              200: '#e5e7eb',
+              300: '#d1d5db',
+              400: '#9ca3af',
+              500: '#6b7280',
+              600: '#4b5563',
+              700: '#374151',
+              800: '#1f2937',
+              900: '#111827'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      font-family: 'DM Sans', sans-serif;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    body {
+      background-color: #f9fafb;
+      color: #111827;
+    }
+
+    body.dark {
+      background-color: #111827;
+      color: #f9fafb;
+    }
+
+    .primary-color {
+      background-color: #634C9F;
+    }
+
+    .secondary-color {
+      background-color: #DB9FDB;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-pagination-bullet {
+      background: white;
+      opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      background: white;
+    }
+
+    .gradient-purple {
+      background: linear-gradient(135deg, #E9D5FF 0%, #DDD6FE 100%);
+    }
+
+    .dark .gradient-purple {
+      background: linear-gradient(135deg, #4C1D95 0%, #5B21B6 100%);
+    }
+
+    .gradient-teal {
+      background: linear-gradient(135deg, #5EEAD4 0%, #6EE7B7 100%);
+    }
+
+    .dark .gradient-teal {
+      background: linear-gradient(135deg, #0D9488 0%, #059669 100%);
+    }
+
+    .gradient-orange {
+      background: linear-gradient(135deg, #FED7AA 0%, #FDBA74 100%);
+    }
+
+    .dark .gradient-orange {
+      background: linear-gradient(135deg, #EA580C 0%, #DC2626 100%);
+    }
+
+    .gradient-yellow {
+      background: linear-gradient(135deg, #FDE047 0%, #FACC15 100%);
+    }
+
+    .dark .gradient-yellow {
+      background: linear-gradient(135deg, #CA8A04 0%, #A16207 100%);
+    }
+
+    .countdown-timer {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+    }
+
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .dark .hover-lift:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner-badge {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .product-image-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image-container img {
+      transition: transform 0.5s ease;
+    }
+
+    .product-image-container:hover img {
+      transform: scale(1.1) rotate(2deg);
+    }
+
+    .bg-btn {
+      background-color: #3c3068;
+    }
+
+    .bg-btn:hover {
+      background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    }
+
+    .dropdown-scroll {
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e0 #f7fafc;
+    }
+
+    .dark .dropdown-scroll {
+      scrollbar-color: #4b5563 #1f2937;
+    }
+
+    .dropdown-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .dropdown-scroll::-webkit-scrollbar-track {
+      background: #f7fafc;
+      border-radius: 3px;
+    }
+
+    .dark .dropdown-scroll::-webkit-scrollbar-track {
+      background: #1f2937;
+    }
+
+    .dropdown-scroll::-webkit-scrollbar-thumb {
+      background-color: #cbd5e0;
+      border-radius: 3px;
+    }
+
+    .dark .dropdown-scroll::-webkit-scrollbar-thumb {
+      background-color: #4b5563;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .category-card {
+      transition: all 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: scale(1.05);
+    }
+
+    /* Dark Mode Dropdown Styles */
+    .theme-dropdown {
+      position: relative;
+    }
+
+    .theme-dropdown-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      color: #374151;
+    }
+
+    .dark .theme-dropdown-button {
+      color: white;
+    }
+
+    .theme-dropdown-button:hover {
+      border-color: #634C9F;
+    }
+
+    .theme-dropdown-menu {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 8px);
+      min-width: 200px;
+      background: white;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      overflow: hidden;
+    }
+
+    .dark .theme-dropdown-menu {
+      background: #374151;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .theme-dropdown.active .theme-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .theme-dropdown-menu-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e5e7eb;
+      font-weight: 600;
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .dark .theme-dropdown-menu-header {
+      border-bottom-color: #4b5563;
+      color: #9ca3af;
+    }
+
+    .theme-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: #374151;
+    }
+
+    .dark .theme-option {
+      color: #e5e7eb;
+    }
+
+    .theme-option:hover {
+      background: #f3f4f6;
+    }
+
+    .dark .theme-option:hover {
+      background: #4b5563;
+    }
+
+    .theme-option.active {
+      background: #ede9fe;
+      color: #634C9F;
+    }
+
+    .dark .theme-option.active {
+      background: #634C9F;
+      color: white;
+    }
+
+    .theme-icon {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .theme-check {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #d1d5db;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+    }
+
+    .theme-option.active .theme-check {
+      border-color: #634C9F;
+      background: #634C9F;
+    }
+
+    .dark .theme-option.active .theme-check {
+      border-color: white;
+      background: white;
+    }
+
+    .theme-check svg {
+      width: 12px;
+      height: 12px;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .dark .theme-option.active .theme-check svg {
+      color: #634C9F;
+    }
+
+    .theme-option.active .theme-check svg {
+      opacity: 1;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Contact Page Specific Styles */
+    .contact-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid #e5e7eb;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .dark .contact-card {
+      background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+      border: 1px solid #374151;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(99, 76, 159, 0.15);
+    }
+
+    .dark .contact-card:hover {
+      box-shadow: 0 20px 40px rgba(99, 76, 159, 0.3);
+    }
+
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      background: linear-gradient(135deg, #634C9F 0%, #8b5cf6 100%);
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .dark .contact-icon {
+      background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+    }
+
+    .contact-form {
+      background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+      border: 1px solid #e5e7eb;
+    }
+
+    .dark .contact-form {
+      background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+      border: 1px solid #374151;
+    }
+
+    .form-input {
+      background: white;
+      border: 2px solid #e5e7eb;
+      transition: all 0.3s ease;
+    }
+
+    .dark .form-input {
+      background: #374151;
+      border: 2px solid #4b5563;
+      color: white;
+    }
+
+    .form-input:focus {
+      border-color: #634C9F;
+      box-shadow: 0 0 0 3px rgba(99, 76, 159, 0.1);
+      outline: none;
+    }
+
+    .dark .form-input:focus {
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, #634C9F 0%, #8b5cf6 100%);
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: linear-gradient(135deg, #553c9a 0%, #7c3aed 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(99, 76, 159, 0.3);
+    }
+
+    .map-container {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .dark .map-container {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(135deg, #634C9F 0%, #8b5cf6 100%);
+      border-radius: 2px;
+    }
+
+    .dark .section-title::after {
+      background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+    }
+
+    .check-label {
+      color: #4b5563;
+    }
+
+    .dark .check-label {
+      color: #d1d5db;
+    }
+
+    .checkbox {
+      accent-color: #634C9F;
+    }
+
+    .dark .checkbox {
+      accent-color: #8b5cf6;
+    }
+
+    /* Footer Styles */
+    .footer-gradient {
+      background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+    }
+
+    .dark .footer-gradient {
+      background: linear-gradient(135deg, #111827 0%, #000000 100%);
+    }
+
+    .footer-link {
+      color: #d1d5db;
+      transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: #8b5cf6;
+    }
+
+    .footer-divider {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dark .footer-divider {
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900">
+  <!-- Top Banner -->
+  <div class="primary-color dark:bg-gray-800 text-white py-2 sm:py-3 text-center relative overflow-hidden">
+    <div class="absolute text-xl sm:text-4xl lg:text-5xl font-bold inset-0 bg-black opacity-10">0/0</div>
+    <div class="relative z-10 px-2 sm:px-4">
+      <div class="flex flex-col items-center justify-center gap-1 sm:flex-row sm:gap-4 lg:gap-8 xl:gap-40">
+        <span class="font-medium text-xs sm:text-sm lg:text-base text-center sm:text-left">
+          🎉 FREE delivery & 40% off next 3 orders!
+        </span>
+
+        <div class="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+          <span class="text-xs sm:text-sm text-center">Sale ends in:</span>
+          <div class="countdown-timer flex gap-1 justify-center">
+            <div class="bg-white/20 px-2 py-1 rounded text-xs sm:text-sm lg:text-base">
+              <span id="days" class="font-bold">37</span><span class="text-[10px]">d</span>
+            </div>
+            <div class="bg-white/20 px-2 py-1 rounded text-xs sm:text-sm lg:text-base">
+              <span id="hours" class="font-bold">20</span><span class="text-[10px]">h</span>
+            </div>
+            <div class="bg-white/20 px-2 py-1 rounded text-xs sm:text-sm lg:text-base">
+              <span id="minutes" class="font-bold">54</span><span class="text-[10px]">m</span>
+            </div>
+            <div class="bg-white/20 px-2 py-1 rounded text-xs sm:text-sm lg:text-base">
+              <span id="seconds" class="font-bold">34</span><span class="text-[10px]">s</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="primary-color dark:bg-gray-800 sticky top-0 z-50 shadow-lg">
+    <!-- Main Header - Desktop/Laptop Version -->
+    <div class="container mx-auto px-3 py-3">
+      <!-- Desktop Layout - Everything in one row -->
+      <div class="hidden lg:flex items-center justify-between gap-6">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <div class="w-12 h-12 lg:w-16 lg:h-16 bg-white dark:bg-gray-700 rounded-lg flex items-center justify-center">
+            <img class="rounded-md" src="../../assets/nexa.png" alt="NexaShop Logo">
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-white">NexaShop</h1>
+            <p class="text-xs text-white/70 hidden xl:block">Premium Online Store</p>
+          </div>
+        </div>
+
+        <!-- Categories Dropdown - Enhanced Design -->
+        <div class="relative group flex-shrink-0">
+          <button
+            class="bg-btn hover:bg-purple-700 px-5 py-3.5 rounded-xl flex items-center gap-3 transition-all duration-300 shadow-lg hover:shadow-xl">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <span class="font-bold text-white text-base">Browse All Categories</span>
+            <svg class="w-5 h-5 text-white transition-transform duration-300 group-hover:rotate-180" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <!-- Mega Menu - Enhanced -->
+          <div
+            class="absolute left-0 top-full mt-2 w-[900px] bg-white dark:bg-gray-800 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-6 grid grid-cols-4 gap-6 border border-gray-100 dark:border-gray-700">
+            <!-- Column 1 - Popular Categories -->
+            <div>
+              <h4
+                class="font-bold text-gray-800 dark:text-white mb-4 pb-3 border-b dark:border-gray-700 text-lg flex items-center gap-2">
+                <span class="text-purple-600">🔥</span> Popular Categories
+              </h4>
+              <div class="space-y-3">
+                <a href="#"
+                  class="flex items-center gap-3 p-3 rounded-xl hover:bg-purple-50 dark:hover:bg-gray-700 transition-all group/item">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
+                    <span class="text-white text-xl">📱</span>
+                  </div>
+                  <div>
+                    <span
+                      class="font-semibold text-gray-800 dark:text-white group-hover/item:text-purple-600">Smartphones</span>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Latest models 2024</p>
+                  </div>
+                  <svg class="w-4 h-4 ml-auto text-gray-400 group-hover/item:text-purple-600" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+                <a href="#"
+                  class="flex items-center gap-3 p-3 rounded-xl hover:bg-purple-50 dark:hover:bg-gray-700 transition-all group/item">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center shadow-lg">
+                    <span class="text-white text-xl">💻</span>
+                  </div>
+                  <div>
+                    <span
+                      class="font-semibold text-gray-800 dark:text-white group-hover/item:text-purple-600">Laptops</span>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Work & gaming</p>
+                  </div>
+                  <svg class="w-4 h-4 ml-auto text-gray-400 group-hover/item:text-purple-600" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Column 2 - Trending Now -->
+            <div>
+              <h4
+                class="font-bold text-gray-800 dark:text-white mb-4 pb-3 border-b dark:border-gray-700 text-lg flex items-center gap-2">
+                <span class="text-green-600">⚡</span> Trending Now
+              </h4>
+              <div class="space-y-3">
+                <a href="#"
+                  class="flex items-center gap-3 p-3 rounded-xl hover:bg-purple-50 dark:hover:bg-gray-700 transition-all group/item">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center shadow-lg">
+                    <span class="text-white text-xl">🏠</span>
+                  </div>
+                  <div>
+                    <span class="font-semibold text-gray-800 dark:text-white group-hover/item:text-purple-600">Smart
+                      Home</span>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Automation devices</p>
+                  </div>
+                </a>
+                <a href="#"
+                  class="flex items-center gap-3 p-3 rounded-xl hover:bg-purple-50 dark:hover:bg-gray-700 transition-all group/item">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center shadow-lg">
+                    <span class="text-white text-xl">⚡</span>
+                  </div>
+                  <div>
+                    <span class="font-semibold text-gray-800 dark:text-white group-hover/item:text-purple-600">Fitness
+                      Tech</span>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Wearables & gear</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Column 3 - Hot Deals -->
+            <div class="col-span-2">
+              <div
+                class="bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-orange-900/30 dark:to-yellow-900/30 rounded-xl p-5 h-full">
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center shadow-lg">
+                    <span class="text-white text-xl">🔥</span>
+                  </div>
+                  <div>
+                    <h5 class="font-bold text-orange-700 dark:text-orange-400 text-lg">Hot Deals</h5>
+                    <p class="text-sm text-orange-600 dark:text-orange-300">Limited time offers</p>
+                  </div>
+                </div>
+
+                <div class="space-y-3 mb-5">
+                  <div class="flex items-center justify-between p-3 bg-white dark:bg-gray-800/50 rounded-lg">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-lg"></div>
+                      <div>
+                        <p class="font-medium text-gray-800 dark:text-white text-sm">Wireless Earbuds</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-500">Up to 45% off</p>
+                      </div>
+                    </div>
+                    <span class="text-red-600 font-bold">$29.99</span>
+                  </div>
+                  <div class="flex items-center justify-between p-3 bg-white dark:bg-gray-800/50 rounded-lg">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg"></div>
+                      <div>
+                        <p class="font-medium text-gray-800 dark:text-white text-sm">Smart Watch</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-500">Up to 35% off</p>
+                      </div>
+                    </div>
+                    <span class="text-red-600 font-bold">$89.99</span>
+                  </div>
+                </div>
+
+                <button
+                  class="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
+                  View All Deals
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Bar - Enhanced for Desktop -->
+        <div class="flex-1 max-w-2xl">
+          <!-- Search Bar -->
+          <div class="flex-1 w-full sm:w-auto order-last sm:order-none mt-3 sm:mt-0">
+            <div class="relative">
+              <input type="text" placeholder="Search for products..." id="searchInput"
+                class="w-full px-4 py-2 md:px-6 md:py-3 bg-white dark:bg-gray-700 rounded-lg text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-300 text-sm md:text-base">
+              <button onclick="searchProducts()"
+                class="bg-btn absolute right-1 top-1/2 mt-[18px] -translate-y-1/2 p-1.5 md:p-2 rounded-lg transition-colors">
+                <svg class="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- User Icons - Enhanced -->
+        <div class="flex items-center gap-2 xl:gap-4">
+          <!-- Wishlist -->
+          <div class="relative group">
+            <button id="wishlistBtnDesktop"
+              class="flex flex-col items-center p-3 rounded-xl hover:bg-purple-600 dark:hover:bg-gray-700 transition-all duration-300 group">
+              <div class="relative">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <span id="wishlistBadgeDesktop"
+                  class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold hidden">0</span>
+              </div>
+              <span class="text-white text-xs mt-1 group-hover:scale-105 transition-transform">Wishlist</span>
+            </button>
+          </div>
+
+          <!-- Account -->
+          <div class="relative group">
+            <button
+              class="flex flex-col items-center p-3 rounded-xl hover:bg-purple-600 dark:hover:bg-gray-700 transition-all duration-300 group">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <span class="text-white text-xs mt-1 group-hover:scale-105 transition-transform">Account</span>
+            </button>
+            <!-- Account Dropdown -->
+            <div
+              class="absolute right-0 top-full mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 p-2 border border-gray-100 dark:border-gray-700">
+              <div class="p-3 border-b dark:border-gray-700">
+                <p class="font-semibold text-gray-800 dark:text-white">Welcome back!</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Sign in for better experience</p>
+              </div>
+              <div class="space-y-1 p-2">
+                <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <svg class="w-5 h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  <span class="text-gray-700 dark:text-white">My Profile</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <svg class="w-5 h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                  <span class="text-gray-700 dark:text-white">Orders</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <svg class="w-5 h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                  </svg>
+                  <span class="text-gray-700 dark:text-white">Wallet</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cart -->
+          <div class="relative group">
+            <button id="cartBtnDesktop"
+              class="flex flex-col items-center p-3 rounded-xl hover:bg-purple-600 dark:hover:bg-gray-700 transition-all duration-300 group">
+              <div class="relative">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span id="cartBadgeDesktop"
+                  class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">0</span>
+              </div>
+              <span class="text-white text-xs mt-1 group-hover:scale-105 transition-transform">Cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Header (Keep as is) -->
+      <div class="lg:hidden">
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center gap-2 flex-shrink-0">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white dark:bg-gray-700 rounded-lg flex items-center justify-center">
+              <img class="rounded-md w-8 h-8 sm:w-10 sm:h-10" src="./assets/nexa.png" alt="NexaShop Logo">
+            </div>
+            <h1 class="text-lg font-bold text-white">NexaShop</h1>
+          </div>
+
+          <!-- Mobile Icons Row -->
+          <div class="flex items-center gap-1">
+            <!-- Mobile Search Toggle -->
+            <button id="mobileSearchToggle" class="text-white p-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
+
+            <!-- Mobile Wishlist -->
+            <button id="wishlistBtnMobile"
+              class="flex items-center hover:bg-purple-600 dark:hover:bg-gray-700 p-2 rounded-lg transition-colors relative">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+              <span id="wishlistBadgeMobile"
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold hidden">0</span>
+            </button>
+
+            <!-- Mobile Cart -->
+            <button id="cartBtnMobile"
+              class="flex items-center hover:bg-purple-600 dark:hover:bg-gray-700 p-2 rounded-lg transition-colors relative">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <span id="cartBadgeMobile"
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] rounded-full w-4 h-4 flex items-center justify-center font-bold">0</span>
+            </button>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuToggle" class="text-white p-2 ml-1">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Search Bar (Hidden by default) -->
+        <div id="mobileSearchContainer" class="hidden mt-3">
+          <div class="relative">
+            <input type="text" placeholder="Search for products, categories or brands..."
+              class="w-full px-4 py-3 rounded-lg text-gray-800 dark:text-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-300 text-sm">
+            <button class="bg-btn absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg transition-colors">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation (Desktop) -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md border-t dark:border-gray-700 hidden lg:block">
+      <div class="container mx-auto">
+        <div class="flex items-center justify-between px-4">
+          <!-- Left side navigation -->
+          <ul class="flex items-center gap-6 xl:gap-8 py-4">
+            <li>
+              <a href="../../index.html"
+                class="font-medium text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors text-sm xl:text-base relative group">
+                Home
+                <span
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            </li>
+
+            <!-- Categories Dropdown -->
+            <li class="relative group"><a href="./shop.html">
+                <button
+                  class="font-medium flex items-center gap-1.5 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors focus:outline-none">
+                  Shop
+                </button>
+              </a>
+            </li>
+            <li>
+              <a href="./about.html"
+                class="font-medium text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                About Us
+                <span
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            </li>
+            <li>
+              <a href="./contact.html"
+                class="font-medium text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                Contact
+                <span
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Dark Mode Dropdown -->
+          <div class="btn-container flex items-center gap-4">
+            <div class="theme-dropdown" id="themeDropdown">
+              <button class="theme-dropdown-button" id="themeButton">
+                <span class="theme-icon" id="currentThemeIcon">
+                  <!-- Sun icon (light mode) -->
+                  <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    style="width: 20px; height: 20px;">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                  <!-- Moon icon (dark mode) -->
+                  <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    style="width: 20px; height: 20px; display: none;">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                  </svg>
+                </span>
+                <span id="currentThemeText">Light</span>
+                <svg class="w-4 h-4 transition-transform" id="dropdownArrow" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div class="theme-dropdown-menu">
+                <div class="theme-dropdown-menu-header">
+                  Choose Theme
+                </div>
+
+                <!-- Light Mode Option -->
+                <div class="theme-option active" data-theme="light">
+                  <span class="theme-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 20px; height: 20px;">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  </span>
+                  <div class="flex-1">
+                    <div class="font-semibold">Light</div>
+                    <div class="text-xs opacity-60">Bright and clear</div>
+                  </div>
+                  <div class="theme-check">
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Dark Mode Option -->
+                <div class="theme-option" data-theme="dark">
+                  <span class="theme-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 20px; height: 20px;">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                  </span>
+                  <div class="flex-1">
+                    <div class="font-semibold">Dark Mode</div>
+                    <div class="text-xs opacity-60">Easy on the eyes</div>
+                  </div>
+                  <div class="theme-check">
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- System Mode Option -->
+                <div class="theme-option" data-theme="system">
+                  <span class="theme-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 20px; height: 20px;">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </span>
+                  <div class="flex-1">
+                    <div class="font-semibold">System</div>
+                    <div class="text-xs opacity-60">Follow device settings</div>
+                  </div>
+                  <div class="theme-check">
+                    <svg fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="container mx-auto px-3 sm:px-4 lg:px-6 py-12">
+    <!-- Header with decorative element -->
+    <div class="mb-12">
+      <h2 class="text-4xl font-bold mb-3 text-gray-800 dark:text-white section-title">Get In Touch</h2>
+      <p class="text-gray-600 dark:text-gray-300 max-w-3xl">
+        Have questions or need assistance? Our team is here to help. Reach out to us through any of the following channels and we'll get back to you as soon as possible.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <!-- Contact Form -->
+      <div class="contact-form p-8 rounded-2xl shadow-xl hover-lift">
+        <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Send us a message</h3>
+        
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">First Name</label>
+              <input type="text" required 
+                class="w-full px-4 py-3 rounded-lg form-input focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400"
+                placeholder="John">
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Last Name</label>
+              <input type="text" required 
+                class="w-full px-4 py-3 rounded-lg form-input focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400"
+                placeholder="Doe">
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Email Address</label>
+            <input type="email" required 
+              class="w-full px-4 py-3 rounded-lg form-input focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400"
+              placeholder="john@example.com">
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Subject</label>
+            <input type="text" required 
+              class="w-full px-4 py-3 rounded-lg form-input focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400"
+              placeholder="How can we help?">
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Message</label>
+            <textarea rows="6" required 
+              class="w-full px-4 py-3 rounded-lg form-input focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400"
+              placeholder="Tell us more about your inquiry..."></textarea>
+          </div>
+          
+          <div class="flex items-center space-x-3">
+            <input type="checkbox" required class="checkbox w-5 h-5">
+            <span class="check-label text-sm">
+              I agree to the <a href="#" class="text-purple-600 dark:text-purple-400 hover:underline">Terms & Conditions</a> and <a href="#" class="text-purple-600 dark:text-purple-400 hover:underline">Privacy Policy</a>
+            </span>
+          </div>
+          
+          <button type="submit" class="submit-btn w-full py-4 rounded-lg font-semibold text-lg">
+            Send Message <i class="fas fa-paper-plane ml-2"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Map & Info -->
+      <div class="space-y-8">
+        <!-- Map -->
+        <div class="map-container h-64 md:h-80">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.953982004428!2d104.8885350759365!3d11.57378968862259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109511b3e4f9d2f%3A0x8f6c9c3e4d3f3c3e!2sToul%20Kork%20District!5e0!3m2!1sen!2skh!4v1700000000000"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Contact Info Card -->
+        <div class="contact-card p-6 rounded-2xl">
+          <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-white">Contact Information</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-map-marker-alt text-purple-600 dark:text-purple-400"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 dark:text-white">Our Location</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">123 Sample St, Sydney NSW 2000 AU</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-clock text-purple-600 dark:text-purple-400"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 dark:text-white">Business Hours</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Mon-Fri: 9:00 AM - 6:00 PM</p>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Sat-Sun: 10:00 AM - 4:00 PM</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-headset text-purple-600 dark:text-purple-400"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 dark:text-white">Support Response Time</h4>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Email: Within 24 hours</p>
+                <p class="text-gray-600 dark:text-gray-300 text-sm">Live Chat: Instant</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Channels Grid -->
+    <div class="mb-16">
+      <h3 class="text-3xl font-bold mb-10 text-center text-gray-800 dark:text-white">Connect With Us</h3>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Email Card -->
+        <div class="contact-card p-8 rounded-2xl hover-lift">
+          <div class="contact-icon mb-6">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white">Email Support</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-6 text-sm">
+            For detailed inquiries, order updates, or documentation requests. Our email support team provides comprehensive assistance with all your needs.
+          </p>
+          <div class="space-y-2">
+            <a href="mailto:support@nexashop.com" class="text-purple-600 dark:text-purple-400 font-semibold hover:underline block">
+              support@nexashop.com
+            </a>
+            <a href="mailto:sales@nexashop.com" class="text-purple-600 dark:text-purple-400 font-semibold hover:underline block">
+              sales@nexashop.com
+            </a>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-4">
+              ⏱️ Response time: Within 24 hours
+            </p>
+          </div>
+        </div>
+
+        <!-- Live Chat Card -->
+        <div class="contact-card p-8 rounded-2xl hover-lift">
+          <div class="contact-icon mb-6">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white">Live Chat</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-6 text-sm">
+            Instant support for quick questions, order status, or product recommendations. Available during business hours for real-time assistance.
+          </p>
+          <button class="submit-btn w-full py-3 rounded-lg font-semibold mt-4">
+            <i class="fas fa-comment-dots mr-2"></i> Start Chat
+          </button>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-4 text-center">
+            🕐 Available 9 AM - 9 PM EST
+          </p>
+        </div>
+
+        <!-- Phone Card -->
+        <div class="contact-card p-8 rounded-2xl hover-lift">
+          <div class="contact-icon mb-6">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white">Phone Support</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-6 text-sm">
+            For urgent matters, technical support, or complex inquiries. Speak directly with our customer service representatives.
+          </p>
+          <div class="space-y-3">
+            <div>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Sales & General Inquiries</p>
+              <a href="tel:+8555550000000" class="text-purple-600 dark:text-purple-400 font-bold text-lg hover:underline">
+                +855 (555) 000-0000
+              </a>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-1">Technical Support</p>
+              <a href="tel:+8555550000001" class="text-purple-600 dark:text-purple-400 font-bold text-lg hover:underline">
+                +855 (555) 000-0001
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Card -->
+        <div class="contact-card p-8 rounded-2xl hover-lift">
+          <div class="contact-icon mb-6">
+            <i class="fas fa-share-alt"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white">Social Media</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-6 text-sm">
+            Follow us for updates, promotions, and community engagement. We're active on all major social platforms.
+          </p>
+          <div class="grid grid-cols-2 gap-3">
+            <a href="#" class="flex items-center justify-center gap-2 p-3 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-200 dark:hover:bg-blue-800/40 transition-colors">
+              <i class="fab fa-facebook-f"></i>
+              <span class="text-sm font-medium">Facebook</span>
+            </a>
+            <a href="#" class="flex items-center justify-center gap-2 p-3 rounded-lg bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 hover:bg-pink-200 dark:hover:bg-pink-800/40 transition-colors">
+              <i class="fab fa-instagram"></i>
+              <span class="text-sm font-medium">Instagram</span>
+            </a>
+            <a href="#" class="flex items-center justify-center gap-2 p-3 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-500 dark:text-blue-400 hover:bg-blue-200 dark:hover:bg-blue-800/40 transition-colors">
+              <i class="fab fa-twitter"></i>
+              <span class="text-sm font-medium">Twitter</span>
+            </a>
+            <a href="#" class="flex items-center justify-center gap-2 p-3 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 hover:bg-red-200 dark:hover:bg-red-800/40 transition-colors">
+              <i class="fab fa-youtube"></i>
+              <span class="text-sm font-medium">YouTube</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mb-16">
+      <h3 class="text-3xl font-bold mb-10 text-center text-gray-800 dark:text-white">Frequently Asked Questions</h3>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- FAQ Column 1 -->
+        <div class="space-y-4">
+          <div class="contact-card p-6 rounded-xl">
+            <h4 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white flex items-center gap-2">
+              <i class="fas fa-shipping-fast text-purple-600 dark:text-purple-400"></i>
+              What are your shipping options?
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              We offer standard (3-5 business days), express (1-2 business days), and same-day delivery in select areas. Free shipping on orders over $50.
+            </p>
+          </div>
+          
+          <div class="contact-card p-6 rounded-xl">
+            <h4 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white flex items-center gap-2">
+              <i class="fas fa-undo text-purple-600 dark:text-purple-400"></i>
+              What is your return policy?
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              We accept returns within 30 days of purchase. Items must be in original condition with all tags attached. Refunds are processed within 5-7 business days.
+            </p>
+          </div>
+          
+          <div class="contact-card p-6 rounded-xl">
+            <h4 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white flex items-center gap-2">
+              <i class="fas fa-shield-alt text-purple-600 dark:text-purple-400"></i>
+              Is my payment information secure?
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Yes, we use 256-bit SSL encryption and are PCI DSS compliant. We never store your full payment details on our servers.
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ Column 2 -->
+        <div class="space-y-4">
+          <div class="contact-card p-6 rounded-xl">
+            <h4 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white flex items-center gap-2">
+              <i class="fas fa-box-open text-purple-600 dark:text-purple-400"></i>
+              Do you offer international shipping?
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Yes, we ship to over 50 countries worldwide. Shipping costs and delivery times vary by location. Contact us for specific rates.
+            </p>
+          </div>
+          
+          <div class="contact-card p-6 rounded-xl">
+            <h4 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white flex items-center gap-2">
+              <i class="fas fa-tags text-purple-600 dark:text-purple-400"></i>
+              How do I apply discount codes?
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Enter your discount code at checkout in the "Promo Code" field. Discounts apply to qualifying items and cannot be combined with other offers.
+            </p>
+          </div>
+          
+          <div class="contact-card p-6 rounded-xl">
+            <h4 class="font-semibold text-lg mb-2 text-gray-800 dark:text-white flex items-center gap-2">
+              <i class="fas fa-headset text-purple-600 dark:text-purple-400"></i>
+              Can I track my order?
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Yes, once your order ships, you'll receive a tracking number via email. You can also track your order from your account dashboard.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-gradient text-white dark:text-gray-200 mt-6">
+    <!-- Top section -->
+    <div class="container mx-auto px-3 sm:px-4 lg:px-6 py-10">
+      <!-- Logo + Title -->
+      <div class="flex items-center gap-6 mb-8">
+        <img src="../../assets/sala.png" alt="ISTAD Logo" class="w-20 h-20 object-contain" />
+        <h2 class="text-3xl font-bold text-white">Sponsored and Organizing by ISTAD</h2>
+      </div>
+
+      <hr class="footer-divider mb-10" />
+
+      <!-- Footer content -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Left -->
+        <div>
+          <img src="../../assets/LOGO-NexaShop.png" alt="NexaShop" class="w-28 mb-4" />
+          <p class="text-gray-300 dark:text-gray-400 text-sm mb-6">
+            Premium online shopping experience with the latest tech products and exclusive deals.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-purple-600 flex items-center justify-center transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-pink-600 flex items-center justify-center transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-blue-500 flex items-center justify-center transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-red-600 flex items-center justify-center transition-colors">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="font-semibold text-white mb-4 text-lg">Do You Need Help?</h3>
+          <p class="text-gray-300 dark:text-gray-400 text-sm mb-6">
+            Subscribe to our newsletter to receive the latest deals, new arrivals, and exclusive offers from NexaShop.
+          </p>
+
+          <div class="mb-6">
+            <div class="flex items-start gap-3 mb-4">
+              <span class="text-purple-300 text-xl">📞</span>
+              <div>
+                <p class="text-sm text-gray-300">Monday–Friday: 08am–9pm</p>
+                <p class="text-lg font-semibold text-white">01234-56789</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-purple-300 text-xl">✉️</span>
+              <div>
+                <p class="text-sm text-gray-300">Email Support</p>
+                <p class="text-white font-semibold">NexaShop@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle -->
+        <div>
+          <h3 class="font-semibold text-white mb-4 text-lg">Customer Service</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="footer-link hover:text-purple-300">Help Center</a></li>
+            <li><a href="#" class="footer-link hover:text-purple-300">FAQs</a></li>
+            <li><a href="#" class="footer-link hover:text-purple-300">Shipping & Delivery</a></li>
+            <li><a href="#" class="footer-link hover:text-purple-300">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link hover:text-purple-300">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Right -->
+        <div>
+          <h3 class="font-semibold text-white mb-4 text-lg">Get to Know Us</h3>
+          <ul class="space-y-3">
+            <li><a href="./about.html" class="footer-link hover:text-purple-300">About Us</a></li>
+            <li><a href="./contact.html" class="footer-link hover:text-purple-300">Contact</a></li>
+            <li><a href="#" class="footer-link hover:text-purple-300">Customer reviews</a></li>
+            <li><a href="#" class="footer-link hover:text-purple-300">Social Responsibility</a></li>
+            <li><a href="#" class="footer-link hover:text-purple-300">Store Locations</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t footer-divider">
+      <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-300 dark:text-gray-400">
+          Copyright © 2025 <span class="text-white font-medium">NexaShop</span>. All rights reserved.
+          Powered by <span class="text-purple-300">BlackRise</span>
+        </p>
+
+        <div class="flex items-center gap-6">
+          <span class="text-xs text-gray-400">Secure Payment:</span>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-6 bg-white rounded flex items-center justify-center text-xs font-bold text-gray-800">VISA</div>
+            <div class="w-8 h-6 bg-yellow-500 rounded flex items-center justify-center text-xs font-bold text-gray-800">MC</div>
+            <div class="w-8 h-6 bg-blue-600 rounded flex items-center justify-center text-xs font-bold text-white">PP</div>
+            <div class="w-8 h-6 bg-green-600 rounded flex items-center justify-center text-xs font-bold text-white">AP</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/animation-countdown.js"></script>
+  <script>
+    // Dark Mode Dropdown Logic
+    const html = document.documentElement;
+    const themeDropdown = document.getElementById('themeDropdown');
+    const themeButton = document.getElementById('themeButton');
+    const themeOptions = document.querySelectorAll('.theme-option');
+    const currentThemeText = document.getElementById('currentThemeText');
+    const currentThemeIcon = document.getElementById('currentThemeIcon');
+    const dropdownArrow = document.getElementById('dropdownArrow');
+    const sunIcon = currentThemeIcon.querySelector('.sun-icon');
+    const moonIcon = currentThemeIcon.querySelector('.moon-icon');
+
+    // Get saved theme or default to 'light'
+    let currentTheme = localStorage.getItem('theme') || 'light';
+
+    // Function to apply theme
+    function applyTheme(theme) {
+      // Remove all theme options active state
+      themeOptions.forEach(opt => opt.classList.remove('active'));
+
+      // Handle system theme
+      if (theme === 'system') {
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        if (systemTheme === 'dark') {
+          html.classList.add('dark');
+          currentThemeText.textContent = 'System (Dark)';
+          sunIcon.style.display = 'none';
+          moonIcon.style.display = 'block';
+        } else {
+          html.classList.remove('dark');
+          currentThemeText.textContent = 'System (Light)';
+          sunIcon.style.display = 'block';
+          moonIcon.style.display = 'none';
+        }
+      } else if (theme === 'dark') {
+        html.classList.add('dark');
+        currentThemeText.textContent = 'Dark';
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      } else {
+        html.classList.remove('dark');
+        currentThemeText.textContent = 'Light';
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      }
+
+      // Set active state on selected option
+      const selectedOption = document.querySelector(`[data-theme="${theme}"]`);
+      if (selectedOption) {
+        selectedOption.classList.add('active');
+      }
+
+      // Save theme
+      currentTheme = theme;
+      localStorage.setItem('theme', theme);
+    }
+
+    // Apply saved theme on load
+    applyTheme(currentTheme);
+
+    // Toggle dropdown
+    themeButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      themeDropdown.classList.toggle('active');
+      dropdownArrow.style.transform = themeDropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!themeDropdown.contains(e.target)) {
+        themeDropdown.classList.remove('active');
+        dropdownArrow.style.transform = 'rotate(0)';
+      }
+    });
+
+    // Handle theme selection
+    themeOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        const selectedTheme = option.getAttribute('data-theme');
+        applyTheme(selectedTheme);
+        themeDropdown.classList.remove('active');
+        dropdownArrow.style.transform = 'rotate(0)';
+      });
+    });
+
+    // Listen for system theme changes when system mode is selected
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (currentTheme === 'system') {
+        applyTheme('system');
+      }
+    });
+
+    // Form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Show success message
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Message Sent!';
+      submitBtn.classList.remove('submit-btn');
+      submitBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+      
+      // Reset after 3 seconds
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+        submitBtn.classList.add('submit-btn');
+        this.reset();
+      }, 3000);
+    });
+
+    // Mobile search toggle
+    const mobileSearchToggle = document.getElementById('mobileSearchToggle');
+    const mobileSearchContainer = document.getElementById('mobileSearchContainer');
+    
+    if (mobileSearchToggle) {
+      mobileSearchToggle.addEventListener('click', () => {
+        mobileSearchContainer.classList.toggle('hidden');
+      });
+    }
+
+    // Live chat button
+    document.querySelectorAll('.contact-card button').forEach(button => {
+      if (button.textContent.includes('Start Chat')) {
+        button.addEventListener('click', () => {
+          alert('Live chat feature would open here. This is a demo.');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

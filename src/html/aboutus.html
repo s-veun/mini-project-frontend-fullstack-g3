@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <title>About Us</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {},
+        },
+      };
+    </script>
+    <style>
+      * {
+        font-family: "DM Sans", sans-serif;
+      }
+      body {
+        transition:
+          background-color 0.5s,
+          color 0.5s;
+      }
+
+      .primary-color {
+        background-color: #634c9f;
+      }
+
+      .bg-btn {
+        background-color: #3c3068;
+      }
+
+      .bg-btn:hover {
+        background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+      }
+      .countdown-timer {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Banner -->
+    <div
+      class="primary-color dark:bg-gray-800 text-white py-3 text-center relative overflow-hidden"
+    >
+      <div class="absolute text-5xl font-bold inset-0 bg-black opacity-10">
+        0/0
+      </div>
+      <div
+        class="relative z-10 flex items-center justify-center gap-8 lg:gap-40 flex-wrap px-4"
+      >
+        <span class="font-medium text-sm lg:text-base">
+          🎉 FREE delivery & 40% Discount for next 3 orders! Place your 1st
+          order in:
+        </span>
+        <div class="flex items-center gap-2">
+          <span class="text-xs lg:text-sm">Until the end of the sale:</span>
+          <div class="countdown-timer flex gap-2">
+            <div class="text-xs lg:text-base">
+              <span id="days">37</span> days
+            </div>
+            <div class="text-xs lg:text-base">
+              <span id="hours">20</span> hours
+            </div>
+            <div class="text-xs lg:text-base">
+              <span id="minutes">54</span> minutes
+            </div>
+            <div class="text-xs lg:text-base">
+              <span id="seconds">34</span> sec
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header -->
+    <header class="primary-color dark:bg-gray-800 sticky top-0 z-50 shadow-lg">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between gap-4 flex-wrap">
+          <!-- Logo -->
+          <div class="flex items-center gap-2">
+            <div class="w-12 h-12 lg:w-16 lg:h-16">
+              <img
+                class="rounded-md"
+                src="../../assets/LOGO-NexaShop.png"
+                alt="NexaShop Logo"
+              />
+            </div>
+            <h1 class="text-xl lg:text-2xl text-white font-bold">NexaShop</h1>
+          </div>
+
+          <!-- Categories Button -->
+          <div class="relative group hidden lg:block">
+            <button class="bg-btn px-6 py-3 rounded-xl flex items-center gap-3">
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <span class="font-bold text-white text-lg">Categories Items</span>
+            </button>
+          </div>
+
+          <!-- Search -->
+          <div class="flex-1 max-w-2xl w-full">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search for products, categories or brands..."
+                class="w-full px-6 py-3 rounded-lg text-gray-800 dark:text-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-300"
+              />
+              <button
+                class="bg-btn absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Account & Cart -->
+          <div class="flex items-center gap-4">
+            <button
+              class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-purple-600"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-width="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+              <span class="text-white hidden lg:inline">Account</span>
+            </button>
+
+            <button
+              class="relative flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-purple-600"
+            >
+              <svg
+                class="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
+              </svg>
+              <span class="text-white hidden lg:inline">Cart</span>
+              <span
+                class="absolute -top-1 -right-1 bg-red-500 text-xs w-5 h-5 rounded-full flex items-center justify-center"
+              >
+                0
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav
+        class="bg-white dark:bg-gray-800 shadow-md border-t dark:border-gray-700"
+      >
+        <div class="container mx-auto px-4">
+          <ul class="flex items-center gap-8 py-4">
+            <li>
+              <a
+                href="../../index.html"
+                class="font-medium hover:text-purple-600"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./category.html"
+                class="font-medium hover:text-purple-600"
+                >Shop</a
+              >
+            </li>
+            <li>
+              <a
+                href="./aboutus.html"
+                class="font-medium hover:text-purple-600"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="./contact.html"
+                class="font-medium hover:text-purple-600"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- section -->
+    <section class="bg-white py-12 px-6 md:px-16">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      >
+        <!-- Left Text Section -->
+        <div>
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">Our Website</h2>
+          <p class="text-gray-700 mb-4">
+            Bring a lot of many Product and Bring have a lot of food to eat.
+          </p>
+          <p class="text-gray-700 mb-4">
+            <strong>NexaShop</strong> is a modern e-commerce platform built to
+            make online shopping easy, secure, and enjoyable. We offer a wide
+            selection of products including fashion, electronics, and everyday
+            essentials, carefully curated to meet the needs of modern customers.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Our mission is to deliver high-quality products at competitive
+            prices while providing a smooth and reliable shopping experience.
+            With secure payment systems, fast delivery, and dedicated customer
+            support, NexaShop aims to become your trusted online shopping
+            destination.
+          </p>
+          <p class="text-gray-700 mb-4">
+            At NexaShop, we believe that technology and innovation can simplify
+            everyday life. That’s why we continuously improve our platform to
+            ensure convenience, transparency, and customer satisfaction at every
+            step.
+          </p>
+
+          <div class="flex gap-6">
+            <!-- Purple Button -->
+            <button
+              class="px-8 py-3 rounded-full bg-purple-500 text-white font-medium shadow-lg hover:bg-purple-600 transition"
+            >
+              Explore our Values
+            </button>
+
+            <!-- Outlined Button -->
+            <button
+              class="px-8 py-3 rounded-full border border-gray-400 text-gray-700 font-medium shadow hover:bg-gray-100 transition"
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Image Section -->
+        <div>
+          <img
+            src="../../assets/aboutusp1.png"
+            alt="Shopping cart in grocery aisle"
+            class="w-full rounded shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 px-6 md:px-16">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      >
+        <!-- Left Text Section -->
+        <div>
+          <h2 class="text-4xl font-bold text-gray-800 mb-2">
+            Credit Card & Payment
+          </h2>
+          <p class="text-lg text-blue-600 font-semibold mb-4">10+ option</p>
+          <p class="text-gray-700 mb-2">
+            We are stand here to<br />make easier to you
+          </p>
+          <p class="text-gray-700 mb-4">
+            Please click “CONTECT ME” button<br />if you have problem with
+            payment
+          </p>
+          <div class="flex items-center gap-4">
+            <button
+              class="px-6 py-2 rounded-full border border-gray-400 text-gray-700 shadow hover:bg-gray-100 transition"
+            >
+              Contact Us
+            </button>
+
+            <button
+              class="px-6 py-2 rounded-full bg-purple-400 text-white shadow hover:bg-purple-500 transition flex items-center gap-2"
+            >
+              PAY NOW
+              <span
+                class="text-xs bg-white text-purple-500 px-2 py-0.5 rounded"
+              >
+                5
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Logos Section -->
+        <div class="grid grid-cols-2 gap-6 justify-items-center">
+          <div
+            class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center"
+          >
+            <img
+              src="../../assets/aba.png"
+              alt="ABA Bank"
+              class="h-12 object-contain"
+            />
+          </div>
+
+          <div
+            class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center"
+          >
+            <img
+              src="../../assets/ac.png"
+              alt="Bird Logo"
+              class="h-12 object-contain"
+            />
+          </div>
+
+          <div
+            class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center"
+          >
+            <img
+              src="../../assets/wink.png"
+              alt="Wing Bank"
+              class="h-12 object-contain"
+            />
+          </div>
+
+          <div
+            class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center"
+          >
+            <img
+              src="../../assets/woori.png"
+              alt="WOORI BANK"
+              class="h-12 object-contain"
+            />
+          </div>
+
+          <div
+            class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center"
+          >
+            <img
+              src="../../assets/hang.png"
+              alt="Ministry of Economy and Finance"
+              class="h-12 object-contain"
+            />
+          </div>
+
+          <div
+            class="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center"
+          >
+            <img
+              src="../../assets/chipmong.png"
+              alt="CHIP MONG GROUP"
+              class="h-12 object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto pt-6 text-center">
+      <h2 class="text-3xl font-bold text-black mb-4">Rooted in Quality</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto mb-16 text-lg">
+        we believe that everyone deserves access to healthy food. Our values
+        guide every delivery we mark.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          class="bg-[#E9E9E9] p-10 rounded-[40px] shadow-lg shadow-gray-300/50 text-left flex flex-col h-full"
+        >
+          <div
+            class="bg-[#D8B4FE] w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+          >
+            <i class="fa-solid fa-car text-2xl text-black"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-2">Swift Delivery</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Our logistics network is optimized to ensure your groceries arrive
+            with 2 hours od ordering
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-10 rounded-[40px] shadow-xl shadow-gray-200/60 text-left border border-gray-100 flex flex-col h-full"
+        >
+          <div
+            class="bg-[#D8B4FE] w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+          >
+            <i class="fa-solid fa-hand-holding-heart text-2xl text-black"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-2">Community First</h3>
+          <p class="text-gray-700 leading-relaxed">
+            We partner with local farmers and artisans to support our
+            neighborhood economy.
+          </p>
+        </div>
+
+        <div
+          class="bg-[#E9E9E9] p-10 rounded-[40px] shadow-lg shadow-gray-300/50 text-left flex flex-col h-full"
+        >
+          <div
+            class="bg-[#D8B4FE] w-14 h-14 rounded-xl flex items-center justify-center mb-6"
+          >
+            <i class="fa-solid fa-leaf text-2xl text-black"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-black mb-2">Eco-Friendly</h3>
+          <p class="text-gray-700 leading-relaxed">
+            We use biodegradable packaging and optimize delivery routes to
+            reduce our carbon footpoint.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-5xl mx-auto px-6 py-12">
+      <h2 class="text-center text-xl font-medium text-gray-800 mb-12">
+        Person who stand refer solution for you
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 items-start">
+        <div class="space-y-8">
+          <div
+            class="bg-[#E9E9E9] rounded-[30px] p-6 shadow-md flex items-center space-x-6 border-b-4 border-r-4 border-gray-300"
+          >
+            <img
+              src="../../assets/yeak.png"
+              alt="Houng Mingyeak"
+              class="w-32 h-32 rounded-xl object-cover shadow-sm"
+            />
+            <div>
+              <h3 class="font-bold text-lg text-black">Houng Mingyeak</h3>
+              <p class="text-xs text-gray-700 mt-2 leading-relaxed">
+                A responsible leader who coordinates the team and ensures every
+                task is completed on time with high quality.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#E9E9E9] rounded-[30px] p-6 shadow-md flex items-center space-x-6 border-b-4 border-r-4 border-gray-300"
+          >
+            <img
+              src="../../assets/komva.png"
+              alt="Vong Kormva"
+              class="w-32 h-32 rounded-xl object-cover shadow-sm"
+            />
+            <div>
+              <h3 class="font-bold text-lg text-black">Vong Kormva</h3>
+              <p class="text-xs text-gray-700 mt-2 leading-relaxed">
+                A writer who creates clear, engaging, and meaningful content for
+                the website.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#E9E9E9] rounded-[30px] p-6 shadow-md flex items-center space-x-6 border-b-4 border-r-4 border-gray-300"
+          >
+            <img
+              src="../../assets/reach.png"
+              alt="Ches Sovanreach"
+              class="w-32 h-32 rounded-xl object-cover shadow-sm"
+            />
+            <div>
+              <h3 class="font-bold text-lg text-black">Ches Sovanreach</h3>
+              <p class="text-xs text-gray-700 mt-2 leading-relaxed">
+                A strategic thinker who analyzes ideas and helps improve the
+                website structure.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#E9E9E9] rounded-[30px] p-6 shadow-md flex items-center space-x-6 border-b-4 border-r-4 border-gray-300"
+          >
+            <img
+              src="../../assets/karona.png"
+              alt="Som Karona"
+              class="w-32 h-32 rounded-xl object-cover shadow-sm"
+            />
+            <div>
+              <h3 class="font-bold text-lg text-black">Som Karona</h3>
+              <p class="text-xs text-gray-700 mt-2 leading-relaxed">
+                A writer who creates clear, engaging, and meaningful content for
+                the website.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-8 mt-16">
+          <div
+            class="bg-[#E9E9E9] rounded-[30px] p-6 shadow-md flex items-center space-x-6 border-b-4 border-r-4 border-gray-300"
+          >
+            <img
+              src="../../assets/saveun.png"
+              alt="Chhorn Sa Vuen"
+              class="w-32 h-32 rounded-xl object-cover shadow-sm"
+            />
+            <div>
+              <h3 class="font-bold text-lg text-black">Chhorn Sa Vuen</h3>
+              <p class="text-xs text-gray-700 mt-2 leading-relaxed">
+                A skilled developer who builds the website interface using
+                modern web technologies.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#E9E9E9] rounded-[30px] p-6 shadow-md flex items-center space-x-6 border-b-4 border-r-4 border-gray-300"
+          >
+            <img
+              src="../../assets/van.png"
+              alt="Vin Van"
+              class="w-32 h-32 rounded-xl object-cover shadow-sm"
+            />
+            <div>
+              <h3 class="font-bold text-lg text-black">Vin Van</h3>
+              <p class="text-xs text-gray-700 mt-2 leading-relaxed">
+                A creative designer who focuses on layout, colors, and user
+                experience to make the website visually attractive.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#E9E9E9] rounded-[30px] p-6 shadow-md flex items-center space-x-6 border-b-4 border-r-4 border-gray-300"
+          >
+            <img
+              src="../../assets/khhim.png"
+              alt="Khorn Sokkhim"
+              class="w-32 h-32 rounded-xl object-cover shadow-sm"
+            />
+            <div>
+              <h3 class="font-bold text-lg text-black">Khorn Sokkhim</h3>
+              <p class="text-xs text-gray-700 mt-2 leading-relaxed">
+                A detail-oriented tester who checks errors and improves website
+                performance.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-[#E9E9E9] rounded-[30px] p-6 shadow-md flex items-center space-x-6 border-b-4 border-r-4 border-gray-300"
+          >
+            <img
+              src="../../assets/sengchhay.png"
+              alt="Sea Sengchhay"
+              class="w-32 h-32 rounded-xl object-cover shadow-sm"
+            />
+            <div>
+              <h3 class="font-bold text-lg text-black">Sea Sengchhay</h3>
+              <p class="text-xs text-gray-700 mt-2 leading-relaxed">
+                A supportive team member who prepares documentation and assists
+                in team communication.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-[#6f7680] text-white mt-6">
+      <!-- Top section -->
+      <div class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Logo + Title -->
+        <div class="flex items-center gap-6 mb-8">
+          <img
+            src="../../assets/sala.png"
+            alt="ISTAD Logo"
+            class="w-20 h-20 object-contain"
+          />
+          <h2 class="text-3xl font-bold">Sponsored and Organizing by ISTAD</h2>
+        </div>
+
+        <hr class="border-white/30 mb-10" />
+
+        <!-- Footer content -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+          <!-- Left -->
+          <div>
+            <img
+              src="../../assets/LOGO-NexaShop.png"
+              alt="NexaShop"
+              class="w-28 mb-4"
+            />
+          </div>
+          <div>
+            <h3 class="font-semibold mb-2">Do You Need Help ?</h3>
+            <p class="text-sm text-white/70 mb-6">
+              Subscribe to our newsletter to receive the latest deals, new
+              arrivals, and exclusive offers from NexaShop.
+            </p>
+
+            <div class="flex items-start gap-3 mb-4">
+              <span class="text-xl">📞</span>
+              <div>
+                <p class="text-sm">Monday–Friday: 08am–9pm</p>
+                <p class="text-lg font-semibold">01234-56789</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-xl">✉️</span>
+              <p class="text-sm">NexaShop@gmail.com</p>
+            </div>
+          </div>
+
+          <!-- Middle -->
+          <div>
+            <h3 class="font-semibold mb-4">Customer Service</h3>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li>Help Center</li>
+              <li>FAQs</li>
+              <li>Shipping & Delivery</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+            </ul>
+          </div>
+
+          <!-- Right -->
+          <div>
+            <h3 class="font-semibold mb-4">Get to Know Us</h3>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li>About Us</li>
+              <li>Contact</li>
+              <li>Customer reviews</li>
+              <li>Social Responsibility</li>
+              <li>Store Locations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="border-t border-white/30">
+        <div
+          class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-sm text-white/70">
+            Copyright 2025 © Shopstore WooCommerce WordPress Theme. Powered by
+            <span class="text-purple-300">BlackRise</span>
+          </p>
+
+          <!-- <div class="flex items-center gap-4">
+            <img src="visa.png" alt="Visa" class="h-6" />
+            <img src="mastercard.png" alt="Mastercard" class="h-6" />
+            <img src="paypal.png" alt="PayPal" class="h-6" />
+            <img src="skrill.png" alt="Skrill" class="h-6" />
+            <img src="klarna.png" alt="Klarna" class="h-6" />
+          </div> -->
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
