@@ -7,7 +7,7 @@
     "dev": "npm run watch:css & npm run watch:ts & wait",
     "watch:css": "tailwindcss -i ./src/index.css -o ./assets/css/output.css --watch",
     "watch:ts": "tsc -p tsconfig.json --watch",
-    "build": "npm run build:css && npm run build:ts",
+    "build": "npm run build:css && npm run build:ts && node scripts/stage-site.mjs",
     "build:css": "tailwindcss -i ./src/index.css -o ./assets/css/output.css --minify",
     "build:ts": "tsc -p tsconfig.json"
   },

@@ -3,3 +3,4 @@ output.css
 package-lock.json
 .vscode
 .vercel
+dist

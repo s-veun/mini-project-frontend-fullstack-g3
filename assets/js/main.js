@@ -73,6 +73,27 @@ function updateCartCount() {
     });
     localStorage.setItem('greenmarket-cart', String(cartCount));
 }
+function initScrollMotion() {
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+        return;
+    const targets = document.querySelectorAll('main > section, .page-wrap > *');
+    if (!targets.length)
+        return;
+    document.documentElement.classList.add('motion-ready');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting)
+                return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+    targets.forEach((target, index) => {
+        target.dataset.reveal = '';
+        target.style.transitionDelay = `${Math.min(index % 4, 3) * 70}ms`;
+        observer.observe(target);
+    });
+}
 function showToast(message) {
     const toast = document.querySelector('#toast');
     if (!toast)
@@ -102,6 +123,7 @@ function initShop() {
 }
 document.documentElement.classList.toggle('dark', localStorage.getItem('greenmarket-theme') === 'dark');
 updateCartCount();
+initScrollMotion();
 document.addEventListener('error', event => {
     const target = event.target;
     if (!(target instanceof HTMLImageElement) || !target.hasAttribute('data-product-image'))
