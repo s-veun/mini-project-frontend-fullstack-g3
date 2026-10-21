@@ -46,6 +46,8 @@ img { display: block; max-width: 100%; }
 .search-button { font-size: 23px; font-weight: 400; }
 .cart-link { height: 40px; display: inline-flex; align-items: center; gap: 11px; padding: 0 0 0 10px; color: #354737; font-size: 12px; font-weight: 700; }
 .cart-link b { display: grid; place-items: center; background: #244b38; color: white; border-radius: 50%; width: 31px; height: 31px; font-size: 10px; }
+.favorite-link { position: relative; display: grid; place-items: center; width: 37px; height: 37px; border: 1px solid #e7e5da; border-radius: 50%; color: #53634d; font-size: 18px; }
+.favorite-link b { position: absolute; top: -5px; right: -5px; display: grid; place-items: center; min-width: 16px; height: 16px; padding: 0 4px; border-radius: 10px; background: #dce7c3; color: #244b38; font-size: 9px; }
 .mobile-menu-button { display: none; padding: 10px; }
 .mobile-menu-button span { width: 16px; height: 1.5px; background: #244b38; display: block; }
 .mobile-drawer { position: fixed; inset: 0 0 0 auto; z-index: 60; width: min(390px, 90vw); height: 100dvh; background: #f8f7f2; padding: 27px; box-shadow: -15px 0 50px #182c1c20; }
@@ -129,6 +131,7 @@ h1 em, h2 em { color: #8da450; font-family: Georgia, serif; font-weight: 400; }
 .sale-pill { position: absolute; top: 12px; left: 12px; padding: 5px 8px; color: #fff; background: #e18c68; border-radius: 2px; font-size: 9px; font-weight: 700; }
 .heart { position: absolute; top: 9px; right: 11px; border: 0; background: #fbfaf6e8; color: #51624d; border-radius: 50%; width: 29px; height: 29px; font-size: 17px; }
 .heart.saved { color: #dc8067; }
+.heart:focus-visible, .cart-item-controls button:focus-visible, .favorites-filter:focus-visible { outline: 2px solid #91a847; outline-offset: 2px; }
 .product-info { padding: 14px 14px 13px; }
 .product-category { color: #9a9d8c; font-size: 8px; letter-spacing: .11em; text-transform: uppercase; }
 .product-info h3 { margin: 6px 0 6px; min-height: 37px; color: #304936; font: 700 12px/1.45 "Manrope", sans-serif; }
@@ -198,6 +201,34 @@ h1 em, h2 em { color: #8da450; font-family: Georgia, serif; font-weight: 400; }
 .results-label { display: flex; justify-content: space-between; padding: 0 0 16px; color: #8b9181; font-size: 10px; }
 .results-label b { color: #3b5c40; }
 .shop-results .product-grid { grid-template-columns: repeat(4, 1fr); row-gap: 20px; }
+.favorites-filter { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; }
+.favorites-filter span { display: inline-grid; place-items: center; min-width: 19px; height: 19px; padding: 0 5px; border-radius: 12px; background: #e9eddf; color: #36533c; font-size: 10px; }
+.favorites-filter.selected { color: #fff; background: #244b38; border-color: #244b38; }
+.favorites-filter.selected span { background: #dbe9bd; }
+.cart-open { overflow: hidden; }
+.cart-drawer-backdrop { position: fixed; inset: 0; z-index: 100; display: flex; justify-content: flex-end; background: #16241e80; }
+.cart-drawer-backdrop[hidden] { display: none; }
+.cart-drawer { display: flex; flex-direction: column; width: min(100%, 460px); height: 100%; padding: 27px; background: #fbfaf6; box-shadow: -15px 0 40px #15251d26; animation: cart-slide-in .22s ease-out; }
+.cart-drawer-header { display: flex; align-items: flex-start; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid #e7e5da; }
+.cart-drawer-header h2 { margin: 6px 0 0; color: #244b38; font-size: 27px; }
+.cart-items { flex: 1; overflow: auto; }
+.cart-empty { display: grid; justify-items: center; padding: 65px 12px; text-align: center; color: #788171; }
+.cart-empty > span { font-size: 40px; }
+.cart-empty h3 { margin: 16px 0 6px; color: #244b38; font-size: 18px; }
+.cart-empty p { margin: 0; font-size: 13px; }
+.cart-item { display: grid; grid-template-columns: 68px minmax(0, 1fr) auto; align-items: center; gap: 13px; padding: 17px 0; border-bottom: 1px solid #e7e5da; }
+.cart-item > img { width: 68px; height: 68px; object-fit: contain; border-radius: 5px; background: #f1f0e9; }
+.cart-item-info h3 { margin: 0 0 5px; color: #314936; font-size: 13px; }
+.cart-item-info > span { color: #7b8275; font-size: 11px; }
+.cart-item-controls { display: flex; align-items: center; gap: 9px; margin-top: 9px; color: #354737; font-size: 12px; }
+.cart-item-controls button:not(.cart-remove) { width: 24px; height: 24px; border: 1px solid #dcded2; border-radius: 50%; background: transparent; color: inherit; }
+.cart-item-controls .cart-remove { border: 0; background: transparent; color: #9c6254; font-size: 11px; text-decoration: underline; }
+.cart-line-total { align-self: start; color: #314936; font-size: 12px; }
+.cart-drawer-footer { padding-top: 18px; border-top: 1px solid #e7e5da; }
+.cart-subtotal { display: flex; align-items: center; justify-content: space-between; color: #314936; font-size: 15px; }
+.cart-drawer-footer p { margin: 8px 0 17px; color: #798174; font-size: 11px; }
+.cart-drawer-footer .button-primary { display: flex; justify-content: center; width: 100%; }
+@keyframes cart-slide-in { from { transform: translateX(20px); opacity: .7; } to { transform: translateX(0); opacity: 1; } }
 .shop-note { display: flex; align-items: center; gap: 15px; margin-top: 38px; padding: 19px 22px; background: #eef0e4; }
 .shop-note > span { color: #84964f; font-size: 23px; }
 .shop-note b { color: #3b523d; font: 700 12px "Manrope", sans-serif; }
@@ -283,7 +314,7 @@ h1 em, h2 em { color: #8da450; font-family: Georgia, serif; font-weight: 400; }
 
 .dark body, .dark { background: #18251c; color: #e8eee4; }
 .dark .site-header { background: rgb(24 37 28 / 92%); border-color: #324537; }
-.dark .brand, .dark .nav-link.active, .dark .nav-link:hover, .dark .icon-button, .dark .cart-link { color: #e0e9d7; }
+.dark .brand, .dark .nav-link.active, .dark .nav-link:hover, .dark .icon-button, .dark .cart-link, .dark .favorite-link { color: #e0e9d7; }
 .dark .brand-light { color: #b4c596; }
 .dark .nav-link { color: #aab7a4; }
 .dark .nav-link.active::after { background: #c6d887; }
@@ -409,8 +440,9 @@ h1 em, h2 em { color: #8da450; font-family: Georgia, serif; font-weight: 400; }
   .shop-toolbar { gap: 14px; }
   .filter-chips { gap: 6px; }
   .chip { padding: 7px 9px; font-size: 9px; }
-  .shop-controls { gap: 5px; }
-  .search-field { width: 56%; }
+  .shop-controls { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px; }
+  .search-field { width: 100%; }
+  .sort-field { grid-column: 1 / -1; justify-self: end; }
   .results-label { font-size: 9px; }
   .category-row { min-height: 139px; padding: 16px 13px; }
   .category-row-number { width: 27px; font-size: 9px; }

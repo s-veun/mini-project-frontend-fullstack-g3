@@ -17,3 +17,5 @@ for (const entry of rootFiles) {
 for (const name of ["app.css", "assets"]) {
   await cp(resolve(root, name), resolve(output, name), { recursive: true });
 }
+
+await cp(resolve(root, "src/data"), resolve(output, "src/data"), { recursive: true });
